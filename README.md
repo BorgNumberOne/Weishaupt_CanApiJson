@@ -24,6 +24,10 @@ http://wem-sg/sd/systable.csv --> could be figured out with the help of network 
 
 ### MAC addresses (possible):  
 d0:76:50:??:??:?? [TAPKOTechnol_??:??:??]  
+<img width="1788" height="886" alt="Weishaupt-Gateway_WEM-Modbus-01-masked" src="https://github.com/user-attachments/assets/de524872-ca1c-429f-a04d-0d7da4675611" />
+<img width="1788" height="886" alt="Weishaupt-Gateway_WEM-Modbus-02" src="https://github.com/user-attachments/assets/fb5c2cad-1068-46e3-9b38-87616e3a4e9f" />
+<img width="1920" height="1080" alt="Weishaupt-Gateway_WEM-Modbus-02a" src="https://github.com/user-attachments/assets/f13044b7-466d-4716-8ab3-3938f4129e4e" />
+<img width="1920" height="1803" alt="Weishaupt-Gateway_WEM-Modbus-05a" src="https://github.com/user-attachments/assets/8c185b37-27e4-4c88-ad1c-e42b1b148095" />
 
 ### Host name and address(es):  
 hostname: MOD-WHGW-?????? (?????? = second part of the MAC address)  
@@ -40,7 +44,8 @@ Connection: keep-alive
 
 {"ID":"12345678","SRC":"DDC","CAPI":{"NN":10,"N01":{"VG":"01010027f902000200"},"N02":{"VG":"010100261f02000200"},"N03":{"VG":"010100259c01000200"},"N04":{"VG":"010100259d01000200"},"N05":{"VG":"01010026fe02000200"},"N06":{"VG":"010100256202000100"},"N07":{"VG":"010100256203000100"},"N08":{"VG":"010200252c02000200"},"N09":{"VG":"010200250702000200"},"N10":{"VG":"010300254902000100"}}}
 
-**After this, the "Systemgerät" will send packages to de Gateway WEM-Modbus:** (polling ever 30 seconds)  
+**After this, the "Systemgerät" will send packages ("SYS") to the Weishaupt Gateway WEM-Modbus (polling ever 30 seconds):**  
+
 {"ID":"12345678","SRC":"SYS","CAPI":{"NN":10,"N01":{"VG":"0203002529020002026e"},"N02":{"VG":"020300255102000100"},"N03":{"VG":"020700254100000100"},"N04":{"VG":"020700253200000200b6"},"N05":{"VG":"020700253302000200ab"},"N06":{"VG":"020700253700000200c2"},"N07":{"VG":"020901263900000100"},"N08":{"VG":"020201252c0200020190"},"N09":{"VG":"020201250702000201d0"},"N10":{"VG":"02040025010000028000"}}}
 
 {"ID":"12345678","SRC":"SYS","CAPI":{"NN":7,"N01":{"VG":"020201255802000200d2"},"N02":{"VG":"020201256b02000202bc"},"N03":{"VG":"020201256a0200020258"},"N04":{"VG":"020201256902000201c2"},"N05":{"VG":"020201255902000201cc"},"N06":{"VG":"02040025020000020264"},"N07":{"VG":"020400252a02000400000000"}}}
