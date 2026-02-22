@@ -3,14 +3,14 @@ Weishaupt CanApiJson - CAN-BUS-like protocol via JSON between:
 "**Systemgerät**" (48301122172, 48301122242, 48301122512, 48301122522) and  
 "**Gateway WEM-Modbus**" (Weishaupt 48300002722)
 
-### Weishaupt Systemgerät - hardware names (possible):  
+### Weishaupt Systemgerät - possible hardware names and item numbers / product codes:  
 WEM-Systemgerät 2.5 -- Weishaupt Ersatzteil komplett mit SD-Karte - ersetzt 48301122172, 48301122242, 48301122512  
 Weishaupt WEM-Systemgerät 2.6 kpl. mit SD-Card 48301122522
 
 ### MAC address(es) (possible):
 00:23:7e:??:??:?? [Elster_??:??:??]
 
-### Host name and address(es):
+### Host name and addresses(URI / URN / URL):
 hostname: WEM-SG  
 http://wem-sg (sg = Systemgerät)  
 http://admin:Admin123@wem-sg  
@@ -22,7 +22,7 @@ http://wem-sg/sd/systable.csv --> could be figured out with the help of network 
 
 ### Gateway WEM-Modbus (Weishaupt 48300002722)  
 
-### MAC addresses (possible):  
+### MAC address(es) (possible):  
 d0:76:50:??:??:?? [TAPKOTechnol_??:??:??]  
 <img width="1788" height="886" alt="Weishaupt-Gateway_WEM-Modbus-01-masked" src="https://github.com/user-attachments/assets/de524872-ca1c-429f-a04d-0d7da4675611" />
 <img width="1788" height="886" alt="Weishaupt-Gateway_WEM-Modbus-02" src="https://github.com/user-attachments/assets/fb5c2cad-1068-46e3-9b38-87616e3a4e9f" />
@@ -34,7 +34,7 @@ hostname: MOD-WHGW-?????? (?????? = second part of the MAC address)
 http://MOD-WHGW-??????:8080
 
 **After setting up the Weishaupt Gateway WEM-Modbus, the device will send a package ("DDC") to the "Systemgerät":**  
-
+  
 POST /ajax/CanApiJson.json HTTP/1.1  
 Host: <IP of the "Systemgerät">  
 Authorization: Basic YWRtaW46QWRtaW4xMjM= (Base64)  
@@ -52,3 +52,20 @@ Connection: keep-alive
 
 {"ID":"12345678","SRC":"SYS","CAPI":{"NN":10,"N01":{"VG":"05010027f90200020001"},"N02":{"VG":"020100261f0200028000"},"N03":{"VG":"020100259c01000201cc"},"N04":{"VG":"020100259d0100020000"},"N05":{"VG":"02010026fe0200028000"},"N06":{"VG":"020100256202000113"},"N07":{"VG":"020100256203000134"},"N08":{"VG":"020200252c0200020190"},"N09":{"VG":"02020025070200020262"},"N10":{"VG":"020300254902000100"}}}
 
+
+**Poosible declarations/meanings:**  
+**DDC**:  
+Direct Digital Control (commonly in HVAC/Building automation)  
+Digital Data Conversion/Converter  
+Direct Digital Control  
+Data Device Corporation
+
+**SRC**:  
+Source  
+Serial Reference Clock / Service Channel  
+
+**CAPI**:  
+CAN API 
+CAN bus API 
+controller area network API  
+(surely not: Common ISDN Application Programming Interface)  
