@@ -182,9 +182,10 @@ the **register 118** is: **heating water buffer tank temperature_top** ("**Puffe
   
 ## Mapping table (some kind of a)  
 --> a certain Weishaupt address/object on the Weishaupt CanApiJson -side consists of: ID **group** sub-group **object**:  
---> additional information like: "register 1030 - **HK** - HK2" are the information from the "**Gateway WEM-Modbus**" web interface --> http://mod-whgw-301501:8080/modbus.shtml  
+--> additional information like: "register 1030 - **HK** - HK2"  
+are the information from the "**Gateway WEM-Modbus**" web interface --> http://mod-whgw-301501:8080/modbus.shtml  
   
-**"SRC":"DDC", "VG"**:"ID **group** sub-group **object** number-of-bytes **data**", modbus register - **Weishaupt device group** - device name:  
+**"SRC":"...", "VG"**:"ID **group** sub-group **object** number-of-bytes **data**", modbus register - **Weishaupt device group** - device name:  
   
 **"SRC":"DDC", "VG"**:"01 **0201** 25 **3302** 0001 **00**", register 1030 - **HK** - HK2  
 **"SRC":"SYS", "VG"**:"02 **0201** 25 **3302** 0001 **02**"  
