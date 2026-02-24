@@ -111,7 +111,7 @@ Inside the Weishaupt Gateway WEM-Modbus I did select just one Modbus register an
 In Wireshark, I did use this display filter: (frame contains 43:41:50:49) to just see the frames with: "CAPI".  
 
 I did repeat this for every single selectable ModBus TCP register in the Weishaupt Gateway WEM-Modbus:  
-a) selection of just one/next register to be transferred in the Weishaupt Gateway WEM-Modbus web interface  
+a) selection of just one/next register to be transfered in the Weishaupt Gateway WEM-Modbus web interface  
 b) sniffing the network - 6 request/response pairs ("DDC"/"SYS" messages) while using the wireshark filter: "(frame contains 43:41:50:49)"  
 c) storing the result into a .pcapng file  
 d) disable the Modbus register in the Weishaupt Gateway WEM-Modbus web interface  
