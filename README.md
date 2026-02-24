@@ -13,8 +13,13 @@ Weishaupt CanApiJson - CAN bus-like / CAN open-like protocol via JSON between:
 **(Weishaupt) CanApiJson register/object number** = Weishaupt CanApiJson register/object number = Weishaupt WEM CanApiJson register/object number  
   
 The resulting generated block adress/register number on the Weishaupt CanApiJson side may vary or could look different and it could depend on the way of presence of your Weishaupt devices or on your constellation of Weishaupt devices:  
-WTC (WTC1 / WTC2 / ...), SG (SG 1 / SG 2 /...), HK (HK 1 / HK 2 /...), WW (WW 1 / WW 2 /...), Sol (SOL 1 / SOL 2 /...), RF, RG1, RG2, KA  
-
+**WTC** (WTC1 / WTC2 / ...)  
+**SG** (SG 1 / SG 2 /...)  
+**HK** (HK 1 / HK 2 /...)  
+**WW** (WW 1 / WW 2 /...)  
+**Sol** (SOL 1 / SOL 2 /...)  
+**RF**, **RG1**, **RG2**, **KA**  
+  
 So, it is very likely that the "Gateway WEM-Modbus" (or a "Gateway WEM-KNX") needs/reads the Weishaupt SG1 systable at first:  
 http://wem-sg/sd/systable.csv  
 for a suitable Weishaupt CanApiJson block adress/register number specification for generating working JSON telegrams.
