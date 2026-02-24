@@ -47,7 +47,7 @@ WEM-Systemgerät 2.5 -- Weishaupt Ersatzteil komplett mit SD-Karte - ersetzt: 48
 Weishaupt WEM-Systemgerät 2.6 kpl. mit SD-Card: 48301122522  
   
 ### MAC address(es) (possible):  
-00:23:7e:??:??:?? [Elster_??:??:??]  
+00:23:7e:??:??:?? [Elster_??:??:??]  (Kuhlmannstrasse 10, 31785 Hameln, DE)
   
 ### Host name and addresses(URI / URN / URL):  
 hostname: WEM-SG  
@@ -64,7 +64,7 @@ http://wem-sg/sd/systable.csv --> could be figured out with the help of network 
 ## Gateway WEM-Modbus (Weishaupt 48300002722)  
 
 ### MAC address(es) (possible):  
-d0:76:50:??:??:?? [TAPKOTechnol_??:??:??]  
+d0:76:50:3?:??:?? [TAPKOTechnol_?:??:??] (TAPKO Technologies GmbH, Im Gewerbepark A15, 93059 Regensburg, Bayern, DE)  
   
 http://mod-whgw-301501:8080/index.shtml  
 <img width="1788" height="886" alt="Weishaupt-Gateway_WEM-Modbus-01-masked" src="https://github.com/user-attachments/assets/de524872-ca1c-429f-a04d-0d7da4675611" />  
