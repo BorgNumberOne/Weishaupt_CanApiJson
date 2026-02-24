@@ -45,7 +45,7 @@ Actual writing/reading values ​​from the "Systemgerät" / the heating contro
     
 See details below.  
 Furthermore a **Weishaupt Gateway WEM-Modbus** can be used to connect the world of Weishaupt WEM protocol with the world of Modbus TCP protocol.
-This can also be used to find out which specific Modbus TCP register (and which documented function/specific value of the heating control (temperatures, pressures, operating states, etc.) is transfered to the equivalent data point of the Weishaupt CanApiJson protocol.
+This can also be used to find out which specific Modbus TCP register (and which documented function/specific value of the heating control[temperatures, pressures, operating states, etc.]) is transfered to the equivalent data point of the Weishaupt CanApiJson protocol.
 
 ##  Weishaupt Systemgerät - possible hardware names and item numbers / product codes:  
 WEM-Systemgerät 2.5 -- Weishaupt Ersatzteil komplett mit SD-Karte - ersetzt: 48301122172, 48301122242, 48301122512  
