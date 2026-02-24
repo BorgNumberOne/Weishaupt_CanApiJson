@@ -1,35 +1,51 @@
 # Weishaupt CanApiJson
-Weishaupt CanApiJson - CAN-BUS-like / CAN open -like protocol via JSON between:  
+Weishaupt CanApiJson - CAN bus-like / CAN open-like protocol via JSON between:  
 "**Systemgerät**" (48301122172, 48301122242, 48301122512, 48301122522) and other Weishaupt devices like a:  
 "**Gateway WEM-Modbus**" (Weishaupt 48300002722)
+  
+**secifications/declareations/stipulation (some kind of):**  
+WEM = Weishaupt Energy Manager / Weishaupt Energy Management  
+Weishaupt WEM bus protocol ("Weishaupt WEM-Bus-Protokoll") = Weishaupt CanApiJson - CAN bus-like / CAN open -like protocol = Weishaupt CanApiJson protocol
+CanApiJson register/object number = Weishaupt CanApiJson register/object number = Weishaupt WEM CanApiJson register/object number  
+  
+The resulting generated block adress/register number on the Weishaupt CanApiJson side may vary or could look different and it could depend on the way of presence of your Weishaupt devices or on your constellation of Weishaupt devices:  
+WTC (WTC1 / WTC2 / ...), SG (SG 1 / SG 2 /...), HK (HK 1 / HK 2 /...), WW (WW 1 / WW 2 /...), Sol (SOL 1 / SOL 2 /...), RF, RG1, RG2, KA  
+
+So, it is very likely that the "Gateway WEM-Modbus" (or a "Gateway WEM-KNX") needs/reads the Weishaupt SG1 systable at first:  
+http://wem-sg/sd/systable.csv  
+for a suitable Weishaupt CanApiJson block adress/register number specification for generating working JSON telegrams.
   
 Here you will find research results regarding the details and structure/function of the communication interface ("JSON") of a Weishaupt system device / control unit ("Systemgerät" - "SG"/"SG1").  
 
 **If you have any Weishaupt CanApiJson realated news or corrections or any updates, please feel free to improve this documentation.**
 
-This should make it easy to directly integrate, read, control, regulate, and modify parameters of Weishaupt devices that use this JSON interface (gas boiler, heat pump, etc.) in Node-RED, Home Assistant, FHEM, ioBroker, etc.  
+This docuent and your improvements should make it easy to directly integrate, read, control, regulate, and modify parameters of Weishaupt devices that use this JSON interface (gas boiler, heat pump, etc.) in Node-RED, Home Assistant, FHEM, ioBroker, etc.  
   
-If the JSON function is enabled in the Weishaupt "Systemgerät" (Weishaupt control unit for the gas boiler/heat pump/...) and the Weishaupt "Systemgerät" is connected to the local network via the RJ-45 interface (DHCP server enabled or manually assigned IP address), then this address can be accessed with a browser:  
+If the JSON function is enabled in the settings of the Weishaupt "Systemgerät" (SG / SG1 - Weishaupt control unit for the gas boiler/heat pump/...) and the Weishaupt "Systemgerät" is connected to the local network via the RJ-45 interface (DHCP server enabled or manually assigned IP address), then this address can be accessed with a browser:  
   
 http://admin:Admin123@wem-sg/ajax/CanApiJson.json
   
-Well, accessing this address with a browser is primarily for testing purposes.  
-Actual writing/reading values ​​from the "Systemgerät" / the heating control unit works differently --> via "POST".  
+Well, accessing this address with a browser is primarily for testing purposes only.  
+Actual writing/reading values ​​from the "Systemgerät" / the heating control unit works differently:  
+**via "POST" commands** (or via CURL)  
+    
 See details below.  
 Furthermore a **Weishaupt Gateway WEM-Modbus** can be used to connect the world of Weishaupt WEM protocol with the world of Modbus TCP protocol.
-This can also be used to find out which specific Modbus TCP register (and which documented function/specific value of the heating control (temperatures, pressures, operating states, etc.) is transferred to the equivalent data point of the Weishaupt WEM protocol.
+This can also be used to find out which specific Modbus TCP register (and which documented function/specific value of the heating control (temperatures, pressures, operating states, etc.) is transfered to the equivalent data point of the Weishaupt CanApiJson protocol.
 
 ##  Weishaupt Systemgerät - possible hardware names and item numbers / product codes:  
-WEM-Systemgerät 2.5 -- Weishaupt Ersatzteil komplett mit SD-Karte - ersetzt 48301122172, 48301122242, 48301122512  
-Weishaupt WEM-Systemgerät 2.6 kpl. mit SD-Card 48301122522
-
-### MAC address(es) (possible):
-00:23:7e:??:??:?? [Elster_??:??:??]
-
-### Host name and addresses(URI / URN / URL):
+WEM-Systemgerät 2.5 -- Weishaupt Ersatzteil komplett mit SD-Karte - ersetzt: 48301122172, 48301122242, 48301122512  
+Weishaupt WEM-Systemgerät 2.6 kpl. mit SD-Card: 48301122522  
+  
+### MAC address(es) (possible):  
+00:23:7e:??:??:?? [Elster_??:??:??]  
+  
+### Host name and addresses(URI / URN / URL):  
 hostname: WEM-SG  
 http://wem-sg (sg = Systemgerät)  
-http://admin:Admin123@wem-sg  
+http://wem-sg.local/  
+http://admin:Admin123@wem-sg/  
+http://admin:Admin123@wem-sg.local/  
 http://wem-sg/script/einstellung.js  
 http://wem-sg/script/Form_eth_log.js  
 http://wem-sg/script/ajax.js  
@@ -61,7 +77,7 @@ If you have got a compatible device, which can communicate to the Weishaupt syst
 Then you can use Wireshark to see what happens betwwen both devices.  
   
 **-->  schematics:**  
-Weishaupt SG1 <----> network interface 1 of your computer -- your computer -- network interface 2 of your computer <----> device than can communicate to the Weishaupt SG1.  
+Weishaupt SG1 <----> network interface 1 of your computer -- your computer -- network interface 2 of your computer <----> another device that can communicate to the Weishaupt SG1 (Weishaupt Gateway WEM-Modbus or Gateway WEM-KNX Art.-Nr. 48300002012.)  
 The device which can understand the Weishaupt WEM / CANbus-like protocol and which can communicate to the Weishaupt SG1 will "POST" a message like this as a request to the Weishaupt SG1:  
   
 **POST /ajax/CanApiJson.json HTTP/1.1  
@@ -84,56 +100,70 @@ Last-Modified: Sun, 22 Feb 2026 19:29:43 +0000**
   
 As you can see, JSON technique will be used for the CAN / CAN open like Weishaupt WEM communication protocol - explanations:    
   
-**ID** = seems to be the same everytime.  
-**SRC** = Source (DDC/SYS)   
-**DDC** = Name/ID of the Weishaupt Gateway Modbus-WEM  
-**SYS** = Name/ID of the Weishaupt "Systemgerät" (SG / SG1)  
-**NN** = amount of following telegrams/messages --> "N01","N02","N03",... ("NN":5 --> "N01"{}..."N05"{})  
-**VG** = ?VG stands for what? --> shows that a message/telegram will follow  
+**ID** = ID_number --> seems to be the same everytime.(did Weishaupt forget to implent something here - why so unique?)  
+**SRC** = Source of the message/telegram (DDC/SYS)   
+**DDC** = ID_name of the Weishaupt Gateway Modbus-WEM  
+**SYS** = ID_name of the Weishaupt "Systemgerät" (SG / SG1)  
+**NN** = amount of following telegrams/messages --> "N01","N02","N03",... ("NN":5 means: "N01"{  },...,"N05"{  })  
+**VG** = ?VG stands for what? --> signals that a message/telegram with data will follow  
 
-The main part / the most important thing is the mesage/ the telegram {e.g. "VG":"02 0700 25 3302 0002 00ab"} and here is what I could find out:  
+The main part / the most important thing is the mesage/telegram after: "VG" - e.g. {"VG":"02 0700 25 3302 0002 00ab"} and here is what I could find out:  
+Currently no guarantee for accuracy.  
   
-device / node ID: 01/02 = requesting device (in this case: "DDC") / responding device (in this case: "SYS")  
+1 byte - device / node ID: 01/02 = requesting device (in this case: "DDC") / responding device (in this case: "SYS")  
   
-group: 0201 / 0200 / 0700  
+2 bytes - group: 0201 / 0200 / 0700 / ...  
   
-sub-group: 25 / 26/ 27  
+1 byte - sub-group: 25 / 26/ 27  
   
-object (register? on the WEM side )  
+2 bytes - object ("data point"/"data point address"/"data register address"? on the WEM side )  
   
-amount of bytes to send / to receive: 01 / 02  
+2 bytes - amount of bytes to send / to receive: 01 / 02  
   
-data / register value  
-
-If you have any relevant technical terms (perhaps from the CAN open / CAN BUS world), please let me know.  
+1 / 2 bytes - value(s) inside the data point / register  (temperatures, pressures, states, date, time, etc...)
   
-Inside the Weishaupt Gateway WEM-Modbus I did select just one Modbus register and did sniff the network with Wireshark.  
+  
+If you have better information or any relevant technical terms (perhaps from the CAN open / CAN bus world), please let me know.  
+  
+Inside the Weishaupt "Gateway WEM-Modbus" I did select just one Modbus TCP register and did sniff the network with the help of Wireshark.  
 In Wireshark, I did use this display filter: (frame contains 43:41:50:49) to just see the frames with: "CAPI".  
 
-I did repeat this for every single selectable ModBus TCP register in the Weishaupt Gateway WEM-Modbus:  
-a) selection of just one/next register to be transfered in the Weishaupt Gateway WEM-Modbus web interface  
+So, I did repeat this for every single selectable Modbus TCP register in the web interface of the Weishaupt Gateway WEM-Modbus:
+    
+a) on the Weishaupt Gateway WEM-Modbus web interface: selection of just one/next Modbus TCP register which has to be transfered/converted to the Weishaupt WEM CanApiJson world  
 b) sniffing the network - 6 request/response pairs ("DDC"/"SYS" messages) while using the wireshark filter: "(frame contains 43:41:50:49)"  
 c) storing the result into a .pcapng file  
-d) disable the Modbus register in the Weishaupt Gateway WEM-Modbus web interface  
+d) disable the previously selected Modbus TCP register in the Weishaupt Gateway WEM-Modbus web interface  
 e) goto "a)"  
 
-Different WEM blocks/registers (Modbus TCP registers) have different cycle times.  
-To determine this definitively, I dumped/sniffed 6 request/response pairs ("DDC"/"SYS" messages) with Wireshark.  
-For example:  
-MODBUS register: 1030 (WEM block/register/address: 25_3302) will by polled every 30 seconds Weishaupt Gateway WEM-Modbus.  
-MODBUS register: 114 (WEM block/register/address: 27_f902) will be polled every 10 seconds by the Weishaupt Gateway WEM-Modbus.
+Different request-response pairs (“DDC”/“SYS” message block/pair) have different cycle times.  
+To ensure the consistency and uniqueness of the Weishaupt CanApiJson messages (nothing else is sent from the gateway)  
+and to figure out the cycle/polling time and to clearly determine both,  
+6 request-response pairs (“DDC”/“SYS” message block/pair) for each individual activated Modbus TCP register were dumped/sniffed.  
   
-Then I did use a script to keep the important things inside the .pcapng network package dump files and to make some reformatting changes for clarity.  
-So you can see that each object/register on the Weishaupt WEM side has a suitable register on the ModBus TCP side.  
+For example (see mapping table below):  
+Modbus register: 1030 (Weishaupt CanApiJson block/register/address: 25_3302) will by polled every 30 seconds by the Weishaupt Gateway WEM-Modbus.  
+Modbus register: 114 (Weishaupt CanApiJson block/register/address: 27_f902) will be polled every 10 seconds by the Weishaupt Gateway WEM-Modbus.
   
-Then you can check the meaning of each Modbus Register here:  
+Then I did use a script to keep just the important things inside the .pcapng network package dump files and to make some reformatting changes for clarity.  
+So you can see below that each object/register on the Weishaupt CanApiJson side has a suitable register on the Modbus TCP side.  
+  
+Then you can check the meaning of each Modbus register here:  
 https://www.loebbeshop.de/media/67944/file/static/pdf/weishaupt/manual-wem-modbustcp.pdf  
-So now, there is a direct Weishaupt WEM register/object number <--> register/object number meaning conversation possible.  
-As you can see the value of the: **Modbus register 118** (Weishaupt WEM block/register/address: 25_6002_0002) is: 0235.  
---> Regarding the pdf file (https://www.loebbeshop.de/media/67944/file/static/pdf/weishaupt/manual-wem-modbustcp.pdf) the **register 118** is: **heating water buffer tank temperature_top** ("**Pufferspeicher Temperatur oben**").  
---> The value is: **0235**[HEX] = **565** = **56,5 °C** --> the value matches the **heating water buffer tank temperature_top**.  
   
-  "SRC":"DDC", "VG":"01_0201_25_3302_0001_00", register 1030 - HK - HK2  
+Now, there is a direct Weishaupt WEM CanApiJson register/object number <--> Modbus TCP register conversation possible. 
+   
+  
+As you can see in the dump/mapping table below, the value of the: **Modbus register 118** (Weishaupt WEM block/register/address: 25_6002_0002) is: 0235.  
+  
+--> Regarding the pdf file (https://www.loebbeshop.de/media/67944/file/static/pdf/weishaupt/manual-wem-modbustcp.pdf) the **register 118** is: **heating water buffer tank temperature_top** ("**Pufferspeicher Temperatur oben**").  
+  
+--> The value is: **0235**[HEX] = **565** = **56,5 °C** --> This value matches the **heating water buffer tank temperature_top** while siffing the communication.  
+  
+  
+Mapping table (some kind of a) - VG message with Weishaupt CanApiJson 
+  
+"SRC":"DDC", "VG":"01_0201_25_3302_0001_00", register 1030 - HK - HK2  
 "SRC":"SYS", "VG":"02_0201_25_3302_0001_02"  
 T_cycle: 30 s  
 
@@ -353,12 +383,19 @@ T_cycle: 60 s
 "SRC":"SYS", "VG":"02_0901_26_2702_0004_00000158"  
 T_cycle: 60 s  
   
+  
+  
+**To do:**
+sniffing, how writing values to the Weishaupt Systemgerät do work.  
+CURL examples for reading/writing  
+  
+  
+  
+  
+**Old/draft:**  
 
+The ID is everytime the same --> did Weishaupt forget to implent something unique?  
 
-  
-  
-  
-Old/draft:  
 **After setting up and configure the Weishaupt Gateway WEM-Modbus, the device will send a package ("DDC") to the "Systemgerät":**  
   
 POST /ajax/CanApiJson.json HTTP/1.1  
