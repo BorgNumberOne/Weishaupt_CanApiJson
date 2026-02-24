@@ -123,18 +123,18 @@ As you can see, JSON technique will be used for the CAN / CAN open like Weishaup
 **DDC** = ID_name of the Weishaupt Gateway Modbus-WEM  
 **SYS** = ID_name of the Weishaupt "Systemgerät" (SG / SG1)  
 **NN** = amount of following telegrams/messages --> "N01","N02","N03",... ("NN":5 means: "N01"{  },...,"N05"{  })  
-**VG** = ?VG stands for what? --> signals that a message/telegram with data will follow  
+**VG** = ?VG stands for what? --> signals that a CAN frame / message / telegram with data will follow  
 
 The main part / the most important thing is the mesage/telegram after: **"VG"** - e.g. {**"VG"**:"02 0700 25 3302 0002 00ab"} and here is what I could find out:  
 Currently no guarantee for accuracy.  
   
-**1 byte** - device / node ID: 01/02 = requesting device (in this case: "DDC") / responding device (in this case: "SYS")  
+**1 byte** - device/node ID or read/write command: 01/02 = requesting device (in this case: "DDC") / responding device (in this case: "SYS")  
   
-**2 bytes** - group: 0201 / 0200 / 0700 / ...  
+**2 bytes** - CAN ID/group: 0201 / 0200 / 0700 / ...  
   
 **1 byte** - sub-group: 25 / 26/ 27  
   
-**2 bytes** - object ("data point"/"data point address"/"data register address"? on the WEM side )  
+**2 bytes** - parameter/register/object ("data point"/"data point address"/"data register address"? on the WEM side )  
   
 **2 bytes** - amount of bytes to send / to receive: 01 / 02  
   
