@@ -3,7 +3,7 @@
   
 Weishaupt CanApiJson - CAN bus-like / CAN open-like protocol via JSON between:  
 "**Systemgerät**" (48301122172, 48301122242, 48301122512, 48301122522) and other Weishaupt (compatible) devices like a:  
-"**Gateway WEM-Modbus**" (48300002722)
+"**Gateway WEM-Modbus**" data protocol converter ( 48300002722 ) or a "**Gateway WEM-KNX**" data protocol converter ( 48300002012 )
   
 **secifications/declareations (some kind of):**  
   
@@ -148,11 +148,11 @@ In Wireshark, I did use this display filter: (frame contains 43:41:50:49) to jus
 
 So, I did repeat this for every single selectable Modbus TCP register in the web interface of the Weishaupt Gateway WEM-Modbus:
     
-a) on the Weishaupt Gateway WEM-Modbus web interface: selection of just one/next Modbus TCP register which has to be transfered/converted to the Weishaupt WEM CanApiJson world  
-b) sniffing the network - 6 request/response pairs ("DDC"/"SYS" messages) while using the wireshark filter: "(frame contains 43:41:50:49)"  
-c) storing the result into a .pcapng file  
-d) disable the previously selected Modbus TCP register in the Weishaupt Gateway WEM-Modbus web interface  
-e) goto "a)"  
+**a)** on the Weishaupt Gateway WEM-Modbus web interface: selection of just one/next Modbus TCP register which has to be transfered/converted to the Weishaupt WEM CanApiJson world  
+**b)** sniffing the network - 6 request/response pairs ("DDC"/"SYS" messages) while using the wireshark filter: "(frame contains 43:41:50:49)"  
+**c)** storing the result into a .pcapng file  
+**d)** disable the previously selected Modbus TCP register in the Weishaupt Gateway WEM-Modbus web interface  
+**e)** goto "a)"  
 
 Different request-response pairs (“DDC”/“SYS” message block/pair) have different cycle times.  
 To ensure the consistency and uniqueness of the Weishaupt CanApiJson messages (nothing else is sent from the gateway)  
@@ -174,15 +174,20 @@ Now, there is a direct Weishaupt WEM CanApiJson register/object number <--> Modb
   
 As you can see in the dump/mapping table below, the value of the: **Modbus register 118** (Weishaupt WEM block/register/address: 25_6002_0002) is: 0235.  
   
---> Regarding the pdf file (https://www.loebbeshop.de/media/67944/file/static/pdf/weishaupt/manual-wem-modbustcp.pdf) the **register 118** is: **heating water buffer tank temperature_top** ("**Pufferspeicher Temperatur oben**").  
+--> Regarding the pdf file (https://www.loebbeshop.de/media/67944/file/static/pdf/weishaupt/manual-wem-modbustcp.pdf)  
+the **register 118** is: **heating water buffer tank temperature_top** ("**Pufferspeicher Temperatur oben**").  
   
 --> The value is: **0235**[HEX] = **565** = **56,5 °C** --> This value matches the **heating water buffer tank temperature_top** while siffing the communication.  
   
   
-Mapping table (some kind of a) - VG message with Weishaupt CanApiJson 
+## Mapping table (some kind of a)  
+--> a certain Weishaupt address/object on the Weishaupt CanApiJson -side consists of: ID **group** sub-group **object**:  
+--> additional information like: "register 1030 - **HK** - HK2" are the information from the "**Gateway WEM-Modbus**" web interface --> http://mod-whgw-301501:8080/modbus.shtml  
   
-"SRC":"DDC", "VG":"01_0201_25_3302_0001_00", register 1030 - HK - HK2  
-"SRC":"SYS", "VG":"02_0201_25_3302_0001_02"  
+**"SRC":"DDC", "VG"**:"ID **group** sub-group **object** number-of-bytes **data**", modbus register - **Weishaupt device group** - device name:  
+  
+**"SRC":"DDC", "VG"**:"01 **0201** 25 **3302** 0001 **00**", register 1030 - **HK** - HK2  
+**"SRC":"SYS", "VG"**:"02 **0201** 25 **3302** 0001 **02**"  
 T_cycle: 30 s  
 
 "SRC":"DDC", "VG":"01_0200_25_3302_0001_00", register 100 - SG - SG1  
