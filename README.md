@@ -427,6 +427,7 @@ curl -0 -u admin:Admin123 -H "Content-Type: application/json" -d "{\"ID\":\"1\",
 response:  
 {"ID":"00000001","SRC":"SYS","CAPI":{"NN":1,"N01":{"VG":"02010025600200020212"}}}  
   
+--> As you can see, ID: 1 is also possible (not only the default ID: 12345678)  
 --> {"VG":"........212 = 212Hex = 535 decimal = 53,5 deg. celsius  
 --> working perfectly.  
   
