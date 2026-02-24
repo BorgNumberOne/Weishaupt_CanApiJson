@@ -16,7 +16,7 @@ Weishaupt CanApiJson - CAN bus-like / CAN open-like protocol via JSON between:
 **(Weishaupt) CanApiJson protocol** = Weishaupt CanApiJson - CAN bus-like / CAN open -like via JSON -protocol  
 **(Weishaupt) CanApiJson register/object number** = Weishaupt CanApiJson block address number or CanApiJson register/object number = Weishaupt WEM CanApiJson register/object number  
   
-The resulting generated block address/register number on the Weishaupt CanApiJson side may vary or could look different and it could depend on the way of presence of your Weishaupt devices or on your constellation of Weishaupt devices:  
+The resulting generated block address/register number on the Weishaupt CanApiJson protocol side may vary or could look different and it could depend on the way of presence of your Weishaupt devices or on your constellation of Weishaupt devices:  
   
 **WTC** (WTC1 / WTC2 / ...)  
 **SG** (SG 1 / SG 2 /...)  
