@@ -2,7 +2,7 @@
 **(e.g.: {"ID":"12345678","SRC":"SYS","CAPI":{"NN":1,"N01":{"VG":"020201258202000101"}}})**  
   
 Weishaupt CanApiJson - CAN bus-like / CAN open-like protocol via JSON between:  
-"**Systemgerät**" (48301122172, 48301122242, 48301122512, 48301122522) and other Weishaupt devices like a:  
+"**Systemgerät**" (48301122172, 48301122242, 48301122512, 48301122522) and other Weishaupt (compatible) devices like a:  
 "**Gateway WEM-Modbus**" (48300002722)
   
 **secifications/declareations (some kind of):**  
