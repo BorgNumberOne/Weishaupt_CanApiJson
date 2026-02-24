@@ -91,8 +91,8 @@ As you can see, JSON technique will be used for the CAN / CAN open like Weishaup
 **NN** = amount of following telegrams/messages --> "N01","N02","N03",... ("NN":5 --> "N01"{}..."N05"{})  
 **VG** = ?VG stands for what? --> shows that a message/telegram will follow  
 
-The main part / the most important thing is the mesage/ the telegram {e.g. "VG":"02 0700 25 3302000200ab"} and here is what I could find out:  
-
+The main part / the most important thing is the mesage/ the telegram {e.g. "VG":"02 0700 25 3302 0002 00ab"} and here is what I could find out:  
+  
 device / node ID: 01/02 = requesting device (in this case: "DDC") / responding device (in this case: "SYS")  
   
 group: 0201 / 0200 / 0700  
