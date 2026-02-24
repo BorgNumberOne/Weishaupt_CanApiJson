@@ -417,14 +417,14 @@ sniffing, how writing values to the Weishaupt Systemgerät do work.
 task: requesting **heating water buffer tank temperature_top** ("**Pufferspeicher Temperatur oben**") with CURL
   
 in Windows console/terminal:  
-curl -0 -u admin:Admin123 -H "Content-Type: application/json" -d "{\"ID\":\"1\",\"SRC\":\"DDC\",\"CAPI\":{\"NN\":1,\"N01\":{\"VG\":\"010100256002000200\"}}}" http://192.168.178.124/ajax/CanApiJson.json
+curl -0 -u admin:Admin123 -H "Content-Type: application/json" -d "{\"ID\":\"1\",\"SRC\":\"DDC\",\"CAPI\":{\"NN\":1,\"N01\":{\"VG\":\"010100256002000200\"}}}" http://192.168.178.124/ajax/CanApiJson.json  
 -->this is the request  
   
-response:
-{"ID":"00000001","SRC":"SYS","CAPI":{"NN":1,"N01":{"VG":"02010025600200020212"}}}
-
+response:  
+{"ID":"00000001","SRC":"SYS","CAPI":{"NN":1,"N01":{"VG":"02010025600200020212"}}}  
+  
 --> {"VG":"........212 = 212Hex = 353 decimal = 35,3 deg. celsius  
---> working perfectly.
+--> working perfectly.  
   
   
 **Old/draft:**  
