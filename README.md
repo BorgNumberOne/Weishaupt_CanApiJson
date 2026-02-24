@@ -4,7 +4,9 @@ Weishaupt CanApiJson - CAN-BUS-like / CAN open -like protocol via JSON between:
 "**Gateway WEM-Modbus**" (Weishaupt 48300002722)
   
 Here you will find research results regarding the details and structure/function of the communication interface ("JSON") of a Weishaupt system device / control unit ("Systemgerät" - "SG"/"SG1").  
-  
+
+**If you have any Weishaupt CanApiJson realated news or corrections or any updates, please feel free to improve this documentation.**
+
 This should make it easy to directly integrate, read, control, regulate, and modify parameters of Weishaupt devices that use this JSON interface (gas boiler, heat pump, etc.) in Node-RED, Home Assistant, FHEM, ioBroker, etc.  
   
 If the JSON function is enabled in the Weishaupt "Systemgerät" (Weishaupt control unit for the gas boiler/heat pump/...) and the Weishaupt "Systemgerät" is connected to the local network via the RJ-45 interface (DHCP server enabled or manually assigned IP address), then this address can be accessed with a browser:  
