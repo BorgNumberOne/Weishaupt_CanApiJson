@@ -16,8 +16,8 @@ http://admin:Admin123@wem-sg/ajax/CanApiJson.json
 Well, accessing this address with a browser is primarily for testing purposes.  
 Actual writing/reading values ​​from the "Systemgerät" / the heating control unit works differently --> via "POST".  
 See details below.  
-Furthermore a **Weishaupt Gateway WEM-Modbus** can be used to connect the world of Weishaupt WEM protocol with the world of ModBus TCP protocol.
-This can also be used to find out which specific ModBUS-TCP register (and which documented function/specific value of the heating control (temperatures, pressures, operating states, etc.) is transferred to the equivalent data point of the Weishaupt WEM protocol.
+Furthermore a **Weishaupt Gateway WEM-Modbus** can be used to connect the world of Weishaupt WEM protocol with the world of Modbus TCP protocol.
+This can also be used to find out which specific Modbus TCP register (and which documented function/specific value of the heating control (temperatures, pressures, operating states, etc.) is transferred to the equivalent data point of the Weishaupt WEM protocol.
 
 ##  Weishaupt Systemgerät - possible hardware names and item numbers / product codes:  
 WEM-Systemgerät 2.5 -- Weishaupt Ersatzteil komplett mit SD-Karte - ersetzt 48301122172, 48301122242, 48301122512  
@@ -129,9 +129,9 @@ So you can see that each object/register on the Weishaupt WEM side has a suitabl
 Then you can check the meaning of each Modbus Register here:  
 https://www.loebbeshop.de/media/67944/file/static/pdf/weishaupt/manual-wem-modbustcp.pdf  
 So now, there is a direct Weishaupt WEM register/object number <--> register/object number meaning conversation possible.  
-As you can see the value of the: Modbus register 118 (Weishaupt WEM block/register/address: 25_6002_0002) is: 0235.  
---> Regarding the pdf file (https://www.loebbeshop.de/media/67944/file/static/pdf/weishaupt/manual-wem-modbustcp.pdf) the register 118 is: "Pufferspeicher Temperatur oben".  
---> The value is: 0235[HEX] = 565 = 56,5 °C --> the value matches the buffer storage temperature perfectly - at the top.  
+As you can see the value of the: **Modbus register 118** (Weishaupt WEM block/register/address: 25_6002_0002) is: 0235.  
+--> Regarding the pdf file (https://www.loebbeshop.de/media/67944/file/static/pdf/weishaupt/manual-wem-modbustcp.pdf) the **register 118** is: **heating water buffer tank temperature_top** ("**Pufferspeicher Temperatur oben**").  
+--> The value is: **0235**[HEX] = **565** = **56,5 °C** --> the value matches the **heating water buffer tank temperature_top**.  
   
   "SRC":"DDC", "VG":"01_0201_25_3302_0001_00", register 1030 - HK - HK2  
 "SRC":"SYS", "VG":"02_0201_25_3302_0001_02"  
