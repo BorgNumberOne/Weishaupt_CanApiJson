@@ -418,20 +418,40 @@ sniffing, how writing values to the Weishaupt Systemgerät do work.
   
   
 ### CURL examples for reading/writing
-task: requesting **heating water buffer tank temperature_top** ("**Pufferspeicher Temperatur oben**") with CURL
+**reading...**: heating water buffer tank temperature_top** ("**Pufferspeicher Temperatur oben**") (Modbus register 118) (CanApiJson adress/group pattern: **25_6002** --> see mapping table)  
   
-in Windows console/terminal:  
-curl -0 -u admin:Admin123 -H "Content-Type: application/json" -d "{\"ID\":\"1\",\"SRC\":\"DDC\",\"CAPI\":{\"NN\":1,\"N01\":{\"VG\":\"010100256002000200\"}}}" http://192.168.178.124/ajax/CanApiJson.json  
+...with CURL in Windows console/terminal:  
+curl -0 -u admin:Admin123 -H "Content-Type: application/json" -d "{\"ID\":\"1\",\"SRC\":\"DDC\",\"CAPI\":{\"NN\":1,\"N01\":{\"VG\":\"010100**2560020**00200\"}}}" http://192.168.178.124/ajax/CanApiJson.json  
 -->this is the request  
   
-response:  
+**response:**  
 {"ID":"00000001","SRC":"SYS","CAPI":{"NN":1,"N01":{"VG":"02010025600200020212"}}}  
   
 --> As you can see, ID: 1 is also possible (not only the default ID: 12345678)  
 --> {"VG":"........212 = 212Hex = 535 decimal = 53,5 deg. celsius  
 --> working perfectly.  
+
   
+**writing | confirm/response writing:**  
+I did enable just the register 110 in the **Weishaupt Gateway WEM-Modbus data protocol converter** web interface.  
+Then, I used PowerHud modbustester software  
+--->IP-address: the WEM-Modbus data protocol converter|Port: 501|Slave ID: 1|Register Start: **110(Vorlaufsolltemperatur Komfort)**|Count: 1  
+and changed the mode from **03-Read Holding Registers** to: **06-Write Single Register**.  
+After this, I changed the default value from 700 (→ 70,0 °C = **02BC** [HEX]) to 655 (→ 65,5 °C = **028F** [HEX]).  
   
+In Wireshark I could sniff/dump these Weishaupt CanApiJson frame packages:  
+  
+**Weishaupt Gateway WEM-Modbus data protocol converter** ----> **Weishaupt SG (Systemgerät)**:  
+{"ID":"12345678","SRC":"DDC","CAPI":{"NN":1,"N01":{"VG":"**03**0200256b020002**028F**"}}}  
+  
+**Weishaupt SG (Systemgerät)** ----> **Weishaupt Gateway WEM-Modbus data protocol converter**:  
+{"ID":"12345678","SRC":"SYS","CAPI":{"NN":1,"N01":{"VG":"**04**0200256b020002**028F**"}}}
+
+You can see the payload of: **028F** (→ 65,5 °C = **028F** [HEX]) and you can see the new commands: **03**/**04**
+**03** seems to be: request writing  
+**03** seems to be: response/confirm writing  
+
+
 **Old/draft:**  
 
 The ID is everytime the same --> did Weishaupt forget to implent something unique?  
