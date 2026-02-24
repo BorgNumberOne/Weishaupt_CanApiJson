@@ -1,5 +1,7 @@
 # Weishaupt CanApiJson  
 **(e.g.: {"ID":"12345678","SRC":"SYS","CAPI":{"NN":1,"N01":{"VG":"020201258202000101"}}})**  
+**short: read and control your Weishaupt (gas) heating device from Windos, Linux, Node Red, Home Assistant**  
+**long: just keep reading**  
   
 Weishaupt CanApiJson - CAN bus-like / CAN open-like protocol via JSON between:  
 "**Systemgerät**" (48301122172, 48301122242, 48301122512, 48301122522) and other Weishaupt (compatible) devices like a:  
@@ -423,7 +425,7 @@ curl -0 -u admin:Admin123 -H "Content-Type: application/json" -d "{\"ID\":\"1\",
 response:  
 {"ID":"00000001","SRC":"SYS","CAPI":{"NN":1,"N01":{"VG":"02010025600200020212"}}}  
   
---> {"VG":"........212 = 212Hex = 353 decimal = 35,3 deg. celsius  
+--> {"VG":"........212 = 212Hex = 535 decimal = 53,5 deg. celsius  
 --> working perfectly.  
   
   
