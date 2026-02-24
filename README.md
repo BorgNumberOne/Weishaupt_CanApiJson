@@ -458,9 +458,9 @@ curl.exe --http1.1 -H "Connection: keep-alive" -H "User-Agent:" -H "Accept:" -H 
 **Conclusion:**  
 With the help of the pattern/mapping table you can read/write everything from/to your **CanApiJson compatible** Weishaupt gas heating system, oil heating system, or heat pump.  
 Now, everything is possible in: Home Assistant, Node Red, Linux Terminal command(curl), Windows terminal/shell/command prompt.  
-
-  
-  
+  -
+  -
+  -
 **Old/draft:**  
 
 The ID is everytime the same --> did Weishaupt forget to implent something unique?  
