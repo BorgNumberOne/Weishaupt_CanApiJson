@@ -1,7 +1,9 @@
 # Weishaupt CanApiJson  
 **(e.g.: {"ID":"12345678","SRC":"SYS","CAPI":{"NN":1,"N01":{"VG":"020201258202000101"}}})**  
-**short: read and control your Weishaupt (gas) heating device from Windos, Linux, Node Red, Home Assistant**  
-**long: just keep reading**  
+
+**short:** read values from and control your Weishaupt (gas) heating device from Windos, Linux, Node Red, Home Assistant  
+  
+**long:** just keep reading  
   
 Weishaupt CanApiJson - CAN bus-like / CAN open-like protocol via JSON between:  
 "**Systemgerät**" (48301122172, 48301122242, 48301122512, 48301122522) and other Weishaupt (compatible) devices like a:  
