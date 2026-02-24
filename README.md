@@ -413,14 +413,15 @@ T_cycle: 60 s
 
     
 ### CURL examples for reading/writing
-**reading...**: heating water buffer tank temperature_top** ("**Pufferspeicher Temperatur oben**") (Modbus register 118) (CanApiJson adress/group pattern: **25_6002** --> see mapping table)  
+**reading...**:  
+...heating water buffer tank temperature_top ("**Pufferspeicher Temperatur oben**") (Modbus register 118) (CanApiJson adress/group pattern: **25_6002** --> see mapping table):  
   
 ...with CURL in Windows console/terminal:  
-curl --http1.1 -H "Connection: keep-alive" -H "User-Agent:" -H "Accept:" -H "Referer: http://192.168.178.124/" -H "Content-Type:" -u admin:Admin123 -d "{\"ID\":\"1\",\"SRC\":\"DDC\",\"CAPI\":{\"NN\":1,\"N01\":{\"VG\":\"010100**2560020**00200\"}}}" http://192.168.178.124/ajax/CanApiJson.json  
+`curl.exe --http1.1 -H "Connection: keep-alive" -H "User-Agent:" -H "Accept:" -H "Referer: http://192.168.178.124/" -H "Content-Type:" -u admin:Admin123 -d "{\"ID\":\"12345678\",\"SRC\":\"DDC\",\"CAPI\":{\"NN\":1,\"N01\":{\"VG\":\"010100256002000200\"}}}" http://192.168.178.124/ajax/CanApiJson.json`  
 -->this is the request  
   
 **response:**  
-{"ID":"00000001","SRC":"SYS","CAPI":{"NN":1,"N01":{"VG":"02010025600200020212"}}}  
+`{"ID":"00000001","SRC":"SYS","CAPI":{"NN":1,"N01":{"VG":"02010025600200020212"}}}`  
   
 --> As you can see, ID: 1 is also possible (not only the default ID: 12345678)  
 --> {"VG":"........212 = 212Hex = 535 decimal = 53,5 deg. celsius  
@@ -445,9 +446,18 @@ In Wireshark I could sniff/dump these Weishaupt CanApiJson frame packages:
 You can see the payload of: **028F** (→ 65,5 °C = **028F** [HEX]) and you can see the new commands: **03**/**04**  
 **03** seems to be: request writing  
 **03** seems to be: response/confirm writing  
+ 
+**05** seems to be: error / something went wrong  
+try this: 
+`curl.exe --http1.1 -H "Connection: keep-alive" -H "User-Agent:" -H "Accept:" -H "Referer: http://192.168.178.124/" -H "Content-Type:" -u admin:Admin123 -d "{\"ID\":\"12345678\",\"SRC\":\"DDC\",\"CAPI\":{\"NN\":1,\"N01\":{\"VG\":\"010200256002000200\"}}}" http://192.168.178.124/ajax/CanApiJson.json`  
+and you will get:  
+{"ID":"12345678","SRC":"SYS","CAPI":{"NN":1,"N01":{"VG":"**05**020025600200020001"}}}  
+  
+--> 010**2**00256002000200 in the request frame was wrong  
+--> 010**1**00256002000200 in the request frame would be right  
   
 **With CURL:**  
-curl.exe --http1.1 -H "Connection: keep-alive" -H "User-Agent:" -H "Accept:" -H "Referer: http://192.168.178.124/" -H "Content-Type:" -u admin:Admin123 -d "{\"ID\":\"12345678\",\"SRC\":\"DDC\",\"CAPI\":{\"NN\":1,\"N01\":{\"VG\":\"030200256b020002028a\"}}}" http://192.168.178.124/ajax/CanApiJson.json  
+`curl.exe --http1.1 -H "Connection: keep-alive" -H "User-Agent:" -H "Accept:" -H "Referer: http://192.168.178.124/" -H "Content-Type:" -u admin:Admin123 -d "{\"ID\":\"12345678\",\"SRC\":\"DDC\",\"CAPI\":{\"NN\":1,\"N01\":{\"VG\":\"030200256b020002028a\"}}}" http://192.168.178.124/ajax/CanApiJson.json`  
   
 **response: (from the Weishaupt SG)**  
 {"ID":"12345678","SRC":"SYS","CAPI":{"NN":1,"N01":{"VG":"040200256b020002028a"}}}  
@@ -455,12 +465,12 @@ curl.exe --http1.1 -H "Connection: keep-alive" -H "User-Agent:" -H "Accept:" -H 
 ---> changing **"Vorlaufsolltemperatur Komfort"** to 028a (650 = 65,0 °C) was successfully.  
   
   
-**Conclusion:**  
+**Conclusion:**
+  
 With the help of the pattern/mapping table you can read/write everything from/to your **CanApiJson compatible** Weishaupt gas heating system, oil heating system, or heat pump.  
 Now, everything is possible in: Home Assistant, Node Red, Linux Terminal command(curl), Windows terminal/shell/command prompt.  
-  -
-  -
-  -
+  
+  
 **Old/draft:**  
 
 The ID is everytime the same --> did Weishaupt forget to implent something unique?  
