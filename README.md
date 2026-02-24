@@ -1,7 +1,7 @@
 # Weishaupt CanApiJson  
 **(e.g.: {"ID":"12345678","SRC":"SYS","CAPI":{"NN":1,"N01":{"VG":"020201258202000101"}}})**  
 
-**short:** read values from and control your Weishaupt (gas) heating device from Windos, Linux, Node Red, Home Assistant  
+**short:** read values from and control your Weishaupt (gas) heating device from Windows, Linux, Node Red, Home Assistant  
   
 **long:** just keep reading  
   
