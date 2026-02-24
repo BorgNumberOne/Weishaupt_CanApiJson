@@ -421,7 +421,7 @@ sniffing, how writing values to the Weishaupt Systemgerät do work.
 **reading...**: heating water buffer tank temperature_top** ("**Pufferspeicher Temperatur oben**") (Modbus register 118) (CanApiJson adress/group pattern: **25_6002** --> see mapping table)  
   
 ...with CURL in Windows console/terminal:  
-curl -0 -u admin:Admin123 -H "Content-Type: application/json" -d "{\"ID\":\"1\",\"SRC\":\"DDC\",\"CAPI\":{\"NN\":1,\"N01\":{\"VG\":\"010100**2560020**00200\"}}}" http://192.168.178.124/ajax/CanApiJson.json  
+curl --http1.1 -H "Connection: keep-alive" -H "User-Agent:" -H "Accept:" -H "Referer: http://192.168.178.124/" -H "Content-Type:" -u admin:Admin123 -d "{\"ID\":\"1\",\"SRC\":\"DDC\",\"CAPI\":{\"NN\":1,\"N01\":{\"VG\":\"010100**2560020**00200\"}}}" http://192.168.178.124/ajax/CanApiJson.json  
 -->this is the request  
   
 **response:**  
@@ -452,7 +452,7 @@ You can see the payload of: **028F** (→ 65,5 °C = **028F** [HEX]) and you c
 **03** seems to be: response/confirm writing  
   
 **With CURL:**
-curl.exe --http1.1 -H "Connection: keep-alive" -H "User-Agent:" -H "Accept:" -H "Referer: http://192.168.178.124/" -H "Content-Type: application/json" -u admin:Admin123 -d "{\"ID\":\"12345678\",\"SRC\":\"DDC\",\"CAPI\":{\"NN\":1,\"N01\":{\"VG\":\"030200256b020002028a\"}}}" http://192.168.178.124/ajax/CanApiJson.json
+curl.exe --http1.1 -H "Connection: keep-alive" -H "User-Agent:" -H "Accept:" -H "Referer: http://192.168.178.124/" -H "Content-Type:" -u admin:Admin123 -d "{\"ID\":\"12345678\",\"SRC\":\"DDC\",\"CAPI\":{\"NN\":1,\"N01\":{\"VG\":\"030200256b020002028a\"}}}" http://192.168.178.124/ajax/CanApiJson.json
   
 **response: (from the Weishaupt SG)**  
 {"ID":"12345678","SRC":"SYS","CAPI":{"NN":1,"N01":{"VG":"040200256b020002028a"}}}  
