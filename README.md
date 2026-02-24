@@ -95,9 +95,9 @@ The main part / the most important thing is the mesage/ the telegram {e.g. "VG":
 
 device / node ID: 01/02 = requesting device (in this case: "DDC") / responding device (in this case: "SYS")  
   
-group: 0201/0200  
+group: 0201 / 0200 / 0700  
   
-sub-group: 25/26/27  
+sub-group: 25 / 26/ 27  
   
 object (register? on the WEM side )  
   
