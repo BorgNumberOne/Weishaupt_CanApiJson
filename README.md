@@ -413,10 +413,10 @@ T_cycle: 60 s
 
     
 ### CURL examples for reading/writing
-**reading...**:  
-...heating water buffer tank temperature_top ("**Pufferspeicher Temperatur oben**") (Modbus register 118) (CanApiJson adress/group pattern: **25_6002** --> see mapping table):  
+**reading**:  
+Reading the heating water buffer tank temperature_top ("**Pufferspeicher Temperatur oben**") (Modbus register 118) (CanApiJson adress/group pattern: **25_6002** --> see mapping table):  
   
-...with CURL in Windows console/terminal:  
+**reading with CURL in Windows console/terminal:**  
 `curl.exe --http1.1 -H "Connection: keep-alive" -H "User-Agent:" -H "Accept:" -H "Referer: http://192.168.178.124/" -H "Content-Type:" -u admin:Admin123 -d "{\"ID\":\"12345678\",\"SRC\":\"DDC\",\"CAPI\":{\"NN\":1,\"N01\":{\"VG\":\"010100256002000200\"}}}" http://192.168.178.124/ajax/CanApiJson.json`  
 -->this is the request  
   
@@ -428,7 +428,7 @@ T_cycle: 60 s
 --> working perfectly.  
 
   
-**writing | confirm/response writing: ("Vorlaufsolltemperatur Komfort")** (Modbus TCP register: 110 on the Gateway WEM-Modbus side) (CanApiJson adress/group pattern: **25_6b02** --> see mapping table)  
+**writing & confirm/response writing:** ("Vorlaufsolltemperatur Komfort") (Modbus TCP register: 110 on the Gateway WEM-Modbus side) (CanApiJson adress/group pattern: **25_6b02** --> see mapping table)  
 I did enable just the register 110 in the **Weishaupt Gateway WEM-Modbus data protocol converter** web interface.  
 Then, I used PowerHud modbustester software  
 --->IP-address: the WEM-Modbus data protocol converter|Port: 501|Slave ID: 1|Register Start: **110(Vorlaufsolltemperatur Komfort)**|Count: 1  
@@ -456,7 +456,7 @@ and you will get:
 --> 010**2**00256002000200 in the request frame was wrong  
 --> 010**1**00256002000200 in the request frame would be right  
   
-**With CURL:**  
+**writing with CURL:**  
 `curl.exe --http1.1 -H "Connection: keep-alive" -H "User-Agent:" -H "Accept:" -H "Referer: http://192.168.178.124/" -H "Content-Type:" -u admin:Admin123 -d "{\"ID\":\"12345678\",\"SRC\":\"DDC\",\"CAPI\":{\"NN\":1,\"N01\":{\"VG\":\"030200256b020002028a\"}}}" http://192.168.178.124/ajax/CanApiJson.json`  
   
 **response: (from the Weishaupt SG)**  
