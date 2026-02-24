@@ -6,9 +6,11 @@ Weishaupt CanApiJson - CAN bus-like / CAN open-like protocol via JSON between:
 "**Gateway WEM-Modbus**" (48300002722)
   
 **secifications/declareations (some kind of):**  
-WEM = Weishaupt Energy Manager / Weishaupt Energy Management  
-Weishaupt WEM bus protocol ("Weishaupt WEM-Bus-Protokoll") = Weishaupt CanApiJson - CAN bus-like / CAN open -like protocol = Weishaupt CanApiJson protocol
-CanApiJson register/object number = Weishaupt CanApiJson register/object number = Weishaupt WEM CanApiJson register/object number  
+  
+**WEM** = Weishaupt Energy Manager / Weishaupt Energy Management  
+**Weishaupt WEM bus protocol** = "Weishaupt WEM-Bus-Protokoll"
+**(Weishaupt) CanApiJson protocol** = Weishaupt CanApiJson - CAN bus-like / CAN open -like via JSON -protocol  
+**(Weishaupt) CanApiJson register/object number** = Weishaupt CanApiJson register/object number = Weishaupt WEM CanApiJson register/object number  
   
 The resulting generated block adress/register number on the Weishaupt CanApiJson side may vary or could look different and it could depend on the way of presence of your Weishaupt devices or on your constellation of Weishaupt devices:  
 WTC (WTC1 / WTC2 / ...), SG (SG 1 / SG 2 /...), HK (HK 1 / HK 2 /...), WW (WW 1 / WW 2 /...), Sol (SOL 1 / SOL 2 /...), RF, RG1, RG2, KA  
