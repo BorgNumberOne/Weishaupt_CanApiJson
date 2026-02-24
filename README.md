@@ -8,7 +8,7 @@ Weishaupt CanApiJson - CAN bus-like / CAN open-like protocol via JSON between:
 **secifications/declareations (some kind of):**  
   
 **WEM** = Weishaupt Energy Manager / Weishaupt Energy Management  
-**Weishaupt WEM bus protocol** = "Weishaupt WEM-Bus-Protokoll"
+**Weishaupt WEM bus protocol** = "Weishaupt WEM-Bus-Protokoll"  
 **(Weishaupt) CanApiJson protocol** = Weishaupt CanApiJson - CAN bus-like / CAN open -like via JSON -protocol  
 **(Weishaupt) CanApiJson register/object number** = Weishaupt CanApiJson register/object number = Weishaupt WEM CanApiJson register/object number  
   
