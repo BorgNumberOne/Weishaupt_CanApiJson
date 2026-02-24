@@ -3,7 +3,7 @@ Weishaupt CanApiJson - CAN bus-like / CAN open-like protocol via JSON between:
 "**Systemgerät**" (48301122172, 48301122242, 48301122512, 48301122522) and other Weishaupt devices like a:  
 "**Gateway WEM-Modbus**" (Weishaupt 48300002722)
   
-**secifications/declareations/stipulation (some kind of):**  
+**secifications/declareations (some kind of):**  
 WEM = Weishaupt Energy Manager / Weishaupt Energy Management  
 Weishaupt WEM bus protocol ("Weishaupt WEM-Bus-Protokoll") = Weishaupt CanApiJson - CAN bus-like / CAN open -like protocol = Weishaupt CanApiJson protocol
 CanApiJson register/object number = Weishaupt CanApiJson register/object number = Weishaupt WEM CanApiJson register/object number  
