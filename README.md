@@ -22,7 +22,7 @@ The resulting generated block address/register number on the Weishaupt CanApiJso
   
 So, it is very likely that the "Gateway WEM-Modbus" (or a "Gateway WEM-KNX") needs/reads the Weishaupt SG1 systable at first:  
 http://wem-sg/sd/systable.csv  
-for a suitable Weishaupt CanApiJson block adress/register number specification for generating working JSON telegrams.
+for a suitable Weishaupt CanApiJson block address/register number specification for generating working JSON telegrams.
   
 Here you will find research results regarding the details and structure/function of the communication interface ("JSON") of a Weishaupt system device / control unit ("Systemgerät" - "SG"/"SG1").  
 
