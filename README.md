@@ -99,8 +99,8 @@ If you have got a compatible device, which can communicate to the Weishaupt syst
 Then you can use Wireshark to see what happens betwwen both devices.  
   
 **-->  schematics:**  
-Weishaupt SG1 <----> network interface 1 of your computer -- your computer -- network interface 2 of your computer <----> another device that can communicate to the Weishaupt SG1 (Weishaupt Gateway WEM-Modbus or Gateway WEM-KNX Art.-Nr. 48300002012.)  
-The device which can understand the Weishaupt WEM / CANbus-like protocol and which can communicate to the Weishaupt SG1 will "POST" a message like this as a request to the Weishaupt SG1:  
+`Weishaupt SG1` <----> `network interface 1 of your computer` -- `your computer` -- `network interface 2 of your computer` <----> `another device that can communicate to the Weishaupt SG1` (Weishaupt Gateway WEM-Modbus / WEM-KNX)  
+The device which can understand the Weishaupt WEM / CAN bus-like protocol and which can communicate to the Weishaupt SG1 will **"POST"** a message like this as a request to the Weishaupt SG1:  
   
 **POST /ajax/CanApiJson.json HTTP/1.1  
 Host: 192.168.178.124  (example Weishaupt SG1 IP address)
