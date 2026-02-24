@@ -16,8 +16,8 @@ http://admin:Admin123@wem-sg/ajax/CanApiJson.json
 Well, accessing this address with a browser is primarily for testing purposes.  
 Actual writing/reading values ​​from the "Systemgerät" / the heating control unit works differently --> via "POST".  
 See details below.  
-Furthermore a **Gateway WEM-Modbus** can be used to bridge the world of Weishaupt WEM protocol with the world of ModBus TCP protocol.
-This can also be used to figure out which ModBUS TCP register (and which documented function) will be transfered to the Weishaupt WEM protocol data point.
+Furthermore a **Weishaupt Gateway WEM-Modbus** can be used to connect the world of Weishaupt WEM protocol with the world of ModBus TCP protocol.
+This can also be used to find out which specific ModBUS-TCP register (and which documented function/specific value of the heating control (temperatures, pressures, operating states, etc.) is transferred to the equivalent data point of the Weishaupt WEM protocol.
 
 ##  Weishaupt Systemgerät - possible hardware names and item numbers / product codes:  
 WEM-Systemgerät 2.5 -- Weishaupt Ersatzteil komplett mit SD-Karte - ersetzt 48301122172, 48301122242, 48301122512  
