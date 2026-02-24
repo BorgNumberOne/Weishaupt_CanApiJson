@@ -65,11 +65,19 @@ http://wem-sg/sd/systable.csv --> could be figured out with the help of network 
 
 ### MAC address(es) (possible):  
 d0:76:50:??:??:?? [TAPKOTechnol_??:??:??]  
-<img width="1788" height="886" alt="Weishaupt-Gateway_WEM-Modbus-01-masked" src="https://github.com/user-attachments/assets/de524872-ca1c-429f-a04d-0d7da4675611" />
-<img width="1788" height="886" alt="Weishaupt-Gateway_WEM-Modbus-02" src="https://github.com/user-attachments/assets/fb5c2cad-1068-46e3-9b38-87616e3a4e9f" />
-<img width="1920" height="1080" alt="Weishaupt-Gateway_WEM-Modbus-02a" src="https://github.com/user-attachments/assets/f13044b7-466d-4716-8ab3-3938f4129e4e" />
-<img width="1920" height="1803" alt="Weishaupt-Gateway_WEM-Modbus-05a" src="https://github.com/user-attachments/assets/8c185b37-27e4-4c88-ad1c-e42b1b148095" />
-
+  
+http://mod-whgw-301501:8080/index.shtml  
+<img width="1788" height="886" alt="Weishaupt-Gateway_WEM-Modbus-01-masked" src="https://github.com/user-attachments/assets/de524872-ca1c-429f-a04d-0d7da4675611" />  
+  
+http://mod-whgw-301501:8080/wem.shtml  - before cofigure the IP setting to the Weishaupt Systemgerät:  
+<img width="1788" height="886" alt="Weishaupt-Gateway_WEM-Modbus-02" src="https://github.com/user-attachments/assets/fb5c2cad-1068-46e3-9b38-87616e3a4e9f" />  
+  
+http://mod-whgw-301501:8080/wem.shtml  - after cofigure the IP setting to the Weishaupt Systemgerät:  
+<img width="1920" height="1080" alt="Weishaupt-Gateway_WEM-Modbus-02a" src="https://github.com/user-attachments/assets/f13044b7-466d-4716-8ab3-3938f4129e4e" />  
+  
+http://mod-whgw-301501:8080/modbus.shtml  
+<img width="1920" height="1803" alt="Weishaupt-Gateway_WEM-Modbus-05a" src="https://github.com/user-attachments/assets/8c185b37-27e4-4c88-ad1c-e42b1b148095" />  
+  
 ### Host name and address(es):  
 hostname: MOD-WHGW-xxyyzz (xxyyzz = second part of the MAC address)  
 http://MOD-WHGW-xxyyzz:8080
