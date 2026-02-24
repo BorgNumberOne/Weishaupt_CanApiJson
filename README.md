@@ -20,9 +20,9 @@ The resulting generated block address/register number on the Weishaupt CanApiJso
 **Sol** (SOL 1 / SOL 2 /...)  
 **RF**, **RG1**, **RG2**, **KA**  
   
-So, it is very likely that the "Gateway WEM-Modbus" (or a "Gateway WEM-KNX") needs/reads the Weishaupt SG1 systable at first:  
+It is therefore very likely that the “Gateway WEM-Modbus” (or a “Gateway WEM-KNX”) first needs/reads the Weishaupt SG1 system table:  
 http://wem-sg/sd/systable.csv  
-for a suitable Weishaupt CanApiJson block address/register number specification/generation for building working JSON telegrams.
+for a suitable Weishaupt CanApiJson block address/register number specification/generation to create functioning JSON telegrams.  
   
 Here you will find research results regarding the details and structure/function of the communication interface ("JSON") of a Weishaupt system device / control unit ("Systemgerät" - "SG"/"SG1").  
 
