@@ -410,13 +410,8 @@ T_cycle: 60 s
 "SRC":"DDC", "VG":"01_0901_26_2702_0004_00", register 176_177 - WTC - WTC1  
 "SRC":"SYS", "VG":"02_0901_26_2702_0004_00000158"  
 T_cycle: 60 s  
-  
-  
-  
-**To do:**
-sniffing, how writing values to the Weishaupt Systemgerät do work.  
-  
-  
+
+    
 ### CURL examples for reading/writing
 **reading...**: heating water buffer tank temperature_top** ("**Pufferspeicher Temperatur oben**") (Modbus register 118) (CanApiJson adress/group pattern: **25_6002** --> see mapping table)  
   
@@ -451,7 +446,7 @@ You can see the payload of: **028F** (→ 65,5 °C = **028F** [HEX]) and you c
 **03** seems to be: request writing  
 **03** seems to be: response/confirm writing  
   
-**With CURL:**
+**With CURL:**  
 curl.exe --http1.1 -H "Connection: keep-alive" -H "User-Agent:" -H "Accept:" -H "Referer: http://192.168.178.124/" -H "Content-Type:" -u admin:Admin123 -d "{\"ID\":\"12345678\",\"SRC\":\"DDC\",\"CAPI\":{\"NN\":1,\"N01\":{\"VG\":\"030200256b020002028a\"}}}" http://192.168.178.124/ajax/CanApiJson.json
   
 **response: (from the Weishaupt SG)**  
