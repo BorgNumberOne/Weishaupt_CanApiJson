@@ -432,7 +432,7 @@ curl -0 -u admin:Admin123 -H "Content-Type: application/json" -d "{\"ID\":\"1\",
 --> working perfectly.  
 
   
-**writing | confirm/response writing:**  
+**writing | confirm/response writing: ("Vorlaufsolltemperatur Komfort")** (Modbus TCP register: 110 on the Gateway WEM-Modbus side) (CanApiJson adress/group pattern: **25_6b02** --> see mapping table)  
 I did enable just the register 110 in the **Weishaupt Gateway WEM-Modbus data protocol converter** web interface.  
 Then, I used PowerHud modbustester software  
 --->IP-address: the WEM-Modbus data protocol converter|Port: 501|Slave ID: 1|Register Start: **110(Vorlaufsolltemperatur Komfort)**|Count: 1  
@@ -451,7 +451,20 @@ You can see the payload of: **028F** (→ 65,5 °C = **028F** [HEX]) and you c
 **03** seems to be: request writing  
 **03** seems to be: response/confirm writing  
 
+**With CURL:**
+curl.exe --http1.1 -H "Connection: keep-alive" -H "User-Agent:" -H "Accept:" -H "Referer: http://192.168.178.124/" -H "Content-Type: application/json" -u admin:Admin123 -d "{\"ID\":\"12345678\",\"SRC\":\"DDC\",\"CAPI\":{\"NN\":1,\"N01\":{\"VG\":\"030200256b020002028a\"}}}" http://192.168.178.124/ajax/CanApiJson.json
 
+**response: (from the Weishaupt SG)**  
+{"ID":"12345678","SRC":"SYS","CAPI":{"NN":1,"N01":{"VG":"040200256b020002028a"}}}  
+  
+---> changing **"Vorlaufsolltemperatur Komfort"** to 028a (650 = 65,0 °C) was successfully.  
+
+
+**Conclusion:**  
+With the help of the pattern/mapping table you can read/write everything from/to your **CanApiJson compatible** Weishaupt gas heating system, oil heating system, or heat pump.  
+Now, everything is possible in: Home Assistant, Node Red, Linux Terminal command(curl), Windows terminal/shell/command prompt.  
+
+  
 **Old/draft:**  
 
 The ID is everytime the same --> did Weishaupt forget to implent something unique?  
