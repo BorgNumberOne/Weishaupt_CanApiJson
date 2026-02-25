@@ -1,7 +1,8 @@
 # Weishaupt CanApiJson  
 **(e.g.: {"ID":"12345678","SRC":"SYS","CAPI":{"NN":1,"N01":{"VG":"020201258202000101"}}})**  
 
-**short:** read values from and control your Weishaupt (gas) heating device from Windows, Linux, Node Red, Home Assistant  
+**short:**  
+Read values from your and control your Weishaupt gas heating device, oil heating system or heat pump from Windows, Linux, Node Red, Home Assistant.  
   
 **long:** just keep reading  
   
@@ -85,40 +86,40 @@ http://mod-whgw-301501:8080/modbus.shtml
   
 ### Host name and address(es):  
 hostname: MOD-WHGW-xxyyzz (xxyyzz = second part of the MAC address)  
-http://MOD-WHGW-xxyyzz:8080
+http://MOD-WHGW-xxyyzz:8080  
+http://MOD-WHGW-xxyyzz.local:8080  
   
 ## Simple communication test to your Weishaupt - boiler / heat pump / "Systemgerät" / ... :  
-open:  
-http://admin:Admin123@wem-sg/ajax/CanApiJson.json  
-...in your browser.
+**open:**  
+`http://admin:Admin123@wem-sg/ajax/CanApiJson.json` in your browser.
 
 Then, you should see something like this:  
-**{"ID":"12345678","SRC":"SYS","CAPI":{"NN":1,"N01":{"VG":"020201258202000101"}}}**
+`{"ID":"12345678","SRC":"SYS","CAPI":{"NN":1,"N01":{"VG":"020201258202000101"}}}`
 
 If you have got a compatible device, which can communicate to the Weishaupt system device / control unit ("Systemgerät" - "SG"/"SG1"), then you can put a computer in between both devices and bridge both network sockets.  
 Then you can use Wireshark to see what happens betwwen both devices.  
   
 **-->  schematics:**  
-`Weishaupt SG1` <----> `network interface 1 of your computer` -- `your computer` -- `network interface 2 of your computer` <----> `another device that can communicate to the Weishaupt SG1` (Weishaupt Gateway WEM-Modbus / WEM-KNX)  
+`Weishaupt SG1` <--> `network interface 1 of your computer`|`your computer`|`network interface 2 of your computer` <--> `another device that can communicate to the Weishaupt SG1` (Weishaupt Gateway WEM-Modbus / WEM-KNX)  
 The device which can understand the Weishaupt WEM / CAN bus-like protocol and which can communicate to the Weishaupt SG1 will **"POST"** a message like this as a request to the Weishaupt SG1:  
   
-**POST /ajax/CanApiJson.json HTTP/1.1  
-Host: 192.168.178.124  (example Weishaupt SG1 IP address)
-Authorization: Basic YWRtaW46QWRtaW4xMjM=  
-Referer: http://192.168.178.124/  
-Content-Length: 215  
-Connection: keep-alive**
+`POST /ajax/CanApiJson.json HTTP/1.1`  
+`Host: 192.168.178.124  (example Weishaupt SG1 IP address)`  
+`Authorization: Basic YWRtaW46QWRtaW4xMjM=`  
+`Referer: http://192.168.178.124/`  
+`Content-Length: 215`  
+`Connection: keep-alive**`  
   
-**{"ID":"12345678","SRC":"DDC","CAPI":{"NN":5,"N01":{"VG":"010700254100000100"},"N02":{"VG":"010700253200000200"},"N03":{"VG":"010700253302000200"},"N04":{"VG":"010700253700000200"},"N05":{"VG":"010901263900000100"}}}** 
+`{"ID":"12345678","SRC":"DDC","CAPI":{"NN":5,"N01":{"VG":"010700254100000100"},"N02":{"VG":"010700253200000200"},"N03":{"VG":"010700253302000200"},"N04":{"VG":"010700253700000200"},"N05":{"VG":"010901263900000100"}}}` 
   
 Then there will be a response from **SG1**:  
 
-**HTTP/1.0 200 OK  
-Content-Type: application/json  
-Date: Sun, 22 Feb 2026 19:29:43 +0000  
-Last-Modified: Sun, 22 Feb 2026 19:29:43 +0000**  
+`HTTP/1.0 200 OK`  
+`Content-Type: application/json`  
+`Date: Sun, 22 Feb 2026 19:29:43 +0000`  
+`Last-Modified: Sun, 22 Feb 2026 19:29:43 +0000`  
   
-**{"ID":"12345678","SRC":"SYS","CAPI":{"NN":5,"N01":{"VG":"020700254100000100"},"N02":{"VG":"020700253200000200b2"},"N03":{"VG":"020700253302000200ab"},"N04":{"VG":"020700253700000200c4"},"N05":{"VG":"020901263900000100"}}}**  
+`{"ID":"12345678","SRC":"SYS","CAPI":{"NN":5,"N01":{"VG":"020700254100000100"},"N02":{"VG":"020700253200000200b2"},"N03":{"VG":"020700253302000200ab"},"N04":{"VG":"020700253700000200c4"},"N05":{"VG":"020901263900000100"}}}`  
   
 As you can see, JSON technique will be used for the CAN / CAN open like Weishaupt WEM communication protocol - explanations:    
   
@@ -185,7 +186,8 @@ the **Modbus register 118** is: **heating water buffer tank temperature_top** ("
   
   
 ## Mapping table (some kind of a)  
---> a certain Weishaupt address/object on the Weishaupt CanApiJson -side consists of: ID **group** sub-group **object**:  
+--> a certain Weishaupt address/object on the Weishaupt CanApiJson -side consists of:  
+  ID **group** sub-group **object**  
 --> additional information like: "register 1030 - **HK** - HK2"  
 are the information from the "**Gateway WEM-Modbus**" web interface --> http://mod-whgw-301501:8080/modbus.shtml  
   
@@ -414,7 +416,8 @@ T_cycle: 60 s
     
 ### CURL examples for reading/writing
 **reading**:  
-Reading the heating water buffer tank temperature_top ("**Pufferspeicher Temperatur oben**") (Modbus register 118) (CanApiJson adress/group pattern: **25_6002** --> see mapping table):  
+Reading the **heating water buffer tank temperature_top** ("**Pufferspeicher Temperatur oben**") (CanApiJson adress/group pattern: **25_6002** --> see mapping table)  
+(Modbus TCP register: 118):  
   
 **reading with CURL in Windows console/terminal:**  
 `curl.exe --http1.1 -H "Connection: keep-alive" -H "User-Agent:" -H "Accept:" -H "Referer: http://192.168.178.124/" -H "Content-Type:" -u admin:Admin123 -d "{\"ID\":\"12345678\",\"SRC\":\"DDC\",\"CAPI\":{\"NN\":1,\"N01\":{\"VG\":\"010100256002000200\"}}}" http://192.168.178.124/ajax/CanApiJson.json`  
@@ -428,7 +431,10 @@ Reading the heating water buffer tank temperature_top ("**Pufferspeicher Tempera
 --> working perfectly.  
 
   
-**writing & confirm/response writing:** ("Vorlaufsolltemperatur Komfort") (Modbus TCP register: 110 on the Gateway WEM-Modbus side) (CanApiJson adress/group pattern: **25_6b02** --> see mapping table)  
+**writing & confirm/response writing:**  
+Writing the: **"Pre-flow set temperature - Comfort"** (**"Vorlaufsolltemperatur Komfort"**) (CanApiJson adress/group pattern: **25_6b02** --> see mapping table)  
+(Modbus TCP register: 110 on the Gateway WEM-Modbus side):  
+  
 I did enable just the register 110 in the **Weishaupt Gateway WEM-Modbus data protocol converter** web interface.  
 Then, I used PowerHud modbustester software  
 --->IP-address: the WEM-Modbus data protocol converter|Port: 501|Slave ID: 1|Register Start: **110(Vorlaufsolltemperatur Komfort)**|Count: 1  
@@ -438,31 +444,31 @@ After this, I changed the default value from 700 (→ 70,0 °C = **02BC** [HEX
 In Wireshark I could sniff/dump these Weishaupt CanApiJson frame packages:  
   
 **Weishaupt Gateway WEM-Modbus data protocol converter** ----> **Weishaupt SG (Systemgerät)**:  
-{"ID":"12345678","SRC":"DDC","CAPI":{"NN":1,"N01":{"VG":"**03**0200256b020002**028F**"}}}  
+`{"ID":"12345678","SRC":"DDC","CAPI":{"NN":1,"N01":{"VG":"**03**0200256b020002**028F**"}}}`  
   
 **Weishaupt SG (Systemgerät)** ----> **Weishaupt Gateway WEM-Modbus data protocol converter**:  
-{"ID":"12345678","SRC":"SYS","CAPI":{"NN":1,"N01":{"VG":"**04**0200256b020002**028F**"}}}
+`{"ID":"12345678","SRC":"SYS","CAPI":{"NN":1,"N01":{"VG":"**04**0200256b020002**028F**"}}}`
   
 You can see the payload of: **028F** (→ 65,5 °C = **028F** [HEX]) and you can see the new commands: **03**/**04**  
 **03** seems to be: request writing  
 **03** seems to be: response/confirm writing  
  
 **05** seems to be: error / something went wrong  
-try this: 
+try this:  
 `curl.exe --http1.1 -H "Connection: keep-alive" -H "User-Agent:" -H "Accept:" -H "Referer: http://192.168.178.124/" -H "Content-Type:" -u admin:Admin123 -d "{\"ID\":\"12345678\",\"SRC\":\"DDC\",\"CAPI\":{\"NN\":1,\"N01\":{\"VG\":\"010200256002000200\"}}}" http://192.168.178.124/ajax/CanApiJson.json`  
 and you will get:  
-{"ID":"12345678","SRC":"SYS","CAPI":{"NN":1,"N01":{"VG":"**05**020025600200020001"}}}  
+`{"ID":"12345678","SRC":"SYS","CAPI":{"NN":1,"N01":{"VG":"**05**020025600200020001"}}}`  
   
---> 010**2**00256002000200 in the request frame was wrong  
---> 010**1**00256002000200 in the request frame would be right  
+--> 010 **2** 00256002000200 in the request frame was wrong  
+--> 010 **1** 00256002000200 in the request frame would be right  
   
 **writing with CURL:**  
 `curl.exe --http1.1 -H "Connection: keep-alive" -H "User-Agent:" -H "Accept:" -H "Referer: http://192.168.178.124/" -H "Content-Type:" -u admin:Admin123 -d "{\"ID\":\"12345678\",\"SRC\":\"DDC\",\"CAPI\":{\"NN\":1,\"N01\":{\"VG\":\"030200256b020002028a\"}}}" http://192.168.178.124/ajax/CanApiJson.json`  
   
 **response: (from the Weishaupt SG)**  
-{"ID":"12345678","SRC":"SYS","CAPI":{"NN":1,"N01":{"VG":"040200256b020002028a"}}}  
+`{"ID":"12345678","SRC":"SYS","CAPI":{"NN":1,"N01":{"VG":"040200256b020002028a"}}}`  
   
----> changing **"Vorlaufsolltemperatur Komfort"** to 028a (650 = 65,0 °C) was successfully.  
+---> changing **"Vorlaufsolltemperatur Komfort"** to 028a (650 = 65,0 °C) was **successfully**.  
   
   
 **Conclusion:**
