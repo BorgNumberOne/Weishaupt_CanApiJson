@@ -4,7 +4,8 @@
 **short:**  
 Read values from your and control your Weishaupt gas heating device, oil heating system or heat pump with:  
 Curl (AmigaOS, OpenWrt, Dos, Windows, Linux, OpenWrt);  
-Controlling your Weishaupt device even with: FHEM, Node-Red, OpenHab, IoBroker, Home Assistant implementations should be possible without any problems.  
+Controlling your Weishaupt device even with:  
+FHEM, Node-Red, OpenHab, IoBroker, Home Assistantbimplementations should be possible without any problems.  
 Basically, you just need to know the CanApiJson datagram structure and the CanApiJson datagram magic patterns mapping table(see below).
   
 **long:** just keep reading  
@@ -21,7 +22,7 @@ Weishaupt CanApiJson - CAN bus-like / CAN open-like protocol via JSON is a commu
 **(Weishaupt) CanApiJson protocol** = Weishaupt CanApiJson - CAN bus-like / CAN open -like via JSON -protocol  
 **(Weishaupt) CanApiJson register/object number** = Weishaupt CanApiJson block address number or CanApiJson register/object number = Weishaupt WEM CanApiJson register/object number  
   
-The resulting generated block address/register number on the Weishaupt CanApiJson protocol side may vary or could look different and it could depend on the way of presence of your Weishaupt devices or on your constellation of Weishaupt devices:  
+The resulting generated block address/register number(magic pattern - see mapping table below) on the Weishaupt CanApiJson protocol side may vary or could look different and it could depend on the way of presence of your Weishaupt devices or on your constellation of Weishaupt devices:  
   
 **WTC** (WTC1 / WTC2 / ...)  
 **SG** (SG 1 / SG 2 /...)  
@@ -38,7 +39,7 @@ Here you will find research results regarding the details and structure/function
 
 **If you have any Weishaupt CanApiJson realated news or corrections or any updates, please feel free to improve this documentation.**
 
-This document (and your further/future improvements) makes it easy to directly integrate, read, control, regulate, and modify parameters of Weishaupt devices that use this CanApiJson protocol (gas boiler, heat pump, etc.) in DOs, Windows, AmigaOs, OpenWRT, Node-RED, Home Assistant, FHEM, ioBroker, etc.  
+This document makes it easy to directly integrate, read, control, regulate, and modify parameters of Weishaupt devices that use this CanApiJson protocol (gas boiler, heat pump, etc.) in DOS, Windows, AmigaOs, OpenWRT, Node-RED, Home Assistant, FHEM, ioBroker, etc.  
   
 If the JSON function is enabled in the settings of the Weishaupt "Systemgerät" (SG / SG1 - Weishaupt control unit for the gas boiler/heat pump/...) and the Weishaupt "Systemgerät" is connected to the local network via the RJ-45 interface (DHCP server enabled or manually assigned IP address), then this address can be accessed with a browser:  
   
