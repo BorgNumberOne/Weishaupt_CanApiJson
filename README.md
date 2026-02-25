@@ -2,7 +2,8 @@
 **(e.g.: {"ID":"12345678","SRC":"SYS","CAPI":{"NN":1,"N01":{"VG":"020201258202000101"}}})**  
 
 **short:**  
-Read values from your and control your Weishaupt gas heating device, oil heating system or heat pump from Windows, Linux, Node Red, Home Assistant.  
+Read values from your and control your Weishaupt gas heating device, oil heating system or heat pump  
+with: Curl (AmigaOS, OpenWrt, Dos, Windows, Linux, OpenWrt), Node Red, Home Assistant.  
   
 **long:** just keep reading  
   
