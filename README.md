@@ -4,7 +4,7 @@
 **short:**  
 Read values from your and control your Weishaupt gas heating device, oil heating system or heat pump with:  
 Curl (AmigaOS, OpenWrt, Dos, Windows, Linux, OpenWrt);  
-Controlling your Weishaupt device even with: FHEM, Node-Red, OpenHab, IoBroker, Home Assistant implementations should be possible without any problems.
+Controlling your Weishaupt device even with: FHEM, Node-Red, OpenHab, IoBroker, Home Assistant implementations should be possible without any problems.  
 Basically, you just need to know the CanApiJson datagram structure and the CanApiJson datagram magic patterns mapping table(see below).
   
 **long:** just keep reading  
