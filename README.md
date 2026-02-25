@@ -7,9 +7,10 @@ with: Curl (AmigaOS, OpenWrt, Dos, Windows, Linux, OpenWrt), Node Red, Home Assi
   
 **long:** just keep reading  
   
-Weishaupt CanApiJson - CAN bus-like / CAN open-like protocol via JSON between:  
+Weishaupt CanApiJson - CAN bus-like / CAN open-like protocol via JSON is a communication protocol between:  
 "**Systemgerät**" (48301122172, 48301122242, 48301122512, 48301122522) and other Weishaupt (compatible) devices like a:  
-"**Gateway WEM-Modbus**" data protocol converter ( 48300002722 ) or a "**Gateway WEM-KNX**" data protocol converter ( 48300002012 )
+"**Gateway WEM-Modbus**" data protocol converter ( 48300002722 ) or a:  
+"**Gateway WEM-KNX**" data protocol converter ( 48300002012 )
   
 **secifications/declareations (some kind of):**  
   
