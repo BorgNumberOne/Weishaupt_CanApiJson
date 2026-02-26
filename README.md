@@ -156,7 +156,7 @@ case 17:	//GETS  (get string)
   
 **1 bytes** - MI - CAN ID/group: 02 / 07  
 
-**1 bytes** - MX - CAN - sub-ID / sub-groupc/ Member Index: 00 / 01 /  
+**1 bytes** - MX - CAN - sub-ID / sub-group / Member Index: 00 / 01 /  
 
 **2 byte** - OX - object / object index: 2541 / 2532 / 2533 / 2537 / 2639 /
   
