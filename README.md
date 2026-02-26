@@ -1,5 +1,8 @@
-# Weishaupt CanApiJson  
+# Weishaupt CanApiJson  - Weishaupt CAPI
 **(e.g.: {"ID":"12345678","SRC":"SYS","CAPI":{"NN":1,"N01":{"VG":"020201258202000101"}}})**  
+
+Anything you do with your Weishaupt gas boiler or system unit and/or compatible devices in connection with the information published here is at your own risk.
+No liability is accepted for damages!
 
 **short:**  
 Read values from your and control your Weishaupt gas heating device, oil heating system or heat pump with:  
