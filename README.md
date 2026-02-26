@@ -138,20 +138,33 @@ As you can see, JSON technique will be used for the CAN / CAN open like Weishaup
 **NN** = amount of following telegrams/messages --> "N01","N02","N03",... ("NN":5 means: "N01"{  },...,"N05"{  })  
 **VG** = ?VG stands for what? --> signals that a CAN frame / message / telegram with data will follow  
 
-The main part / the most important thing is the mesage/telegram after: **"VG"** - e.g. {**"VG"**:"02 0700 25 3302 0002 00ab"} and here is what I could find out:  
+The main part / the most important thing is the mesage/telegram after: **"VG"** - e.g. {**"VG"**:"02 07 00 2533 02 0002 00ab"} and here is what I could find out:  
 Currently no guarantee for accuracy.  
+
+|   CM   |   MI   |   MX   |   OX   |   OS   |   VS   |   VA   | (official descriptions and field size: http://wem-sg/script/Form_eth_log.js)  
+| 1 Byte | 1 Byte | 1 Byte | 2 Byte | 1 Byte | 2 Byte | x Byte |  (field size)  
+
+**CMD cases:**  
+case 1:		//GET  (in this case: "DDC" wants to **GET** data)
+case 2:		//Response  (in this case: "SYS" wants to **Response** data)
+case 3:		//SET (NUMERIC)  
+case 4:		//ACK  
+case 19:	//SETS  (set string)
+case 17:	//GETS  (get string)
+
+**1 byte** - CM - command  
   
-**1 byte** - device/node ID or read/write command: 01/02 = requesting device (in this case: "DDC") / responding device (in this case: "SYS")  
+**1 bytes** - MI - CAN ID/group: 02 / 07  
+
+**1 bytes** - MX - CAN - sub-ID / sub-groupc/ Member Index: 00 / 01 /  
+
+**2 byte** - OX - object / object index: 2541 / 2532 / 2533 / 2537 / 2639 /
   
-**2 bytes** - CAN ID/group: 0201 / 0200 / 0700 / ...  
+**1 byte** - OS - Offset  
   
-**1 byte** - sub-group: 25 / 26/ 27  
+**2 bytes** - VS - value size - amount of bytes to send / to receive: 01 / 02  
   
-**2 bytes** - parameter/register/object ("data point"/"data point address"/"data register address"? on the WEM side )  
-  
-**2 bytes** - amount of bytes to send / to receive: 01 / 02  
-  
-**1 or 2 byte(s)** - value(s) inside the data point / register  (temperatures, pressures, states, date, time, etc...)
+**x byte(s)** - value(s) inside the data point / register  (temperatures, pressures, states, date, time, etc...)
   
   
 If you have better information or any relevant technical terms (perhaps from the CAN open / CAN bus world), please let me know.  
