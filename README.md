@@ -149,11 +149,11 @@ case 1 (0x01):		//**GET** - numeric value (in this case: "DDC" wants to **GET** 
 case 2 (0x02):		//**Response** (in this case: "SYS" wants to **Response** numeric data)
 case 3 (0x03):		//SET - numeric value  
 case 4 (0x04):		//ACK  
-case 17 (0x11):	//GETS  (set string)
-case 18 (0x12):	//RESPONSE STRING
-case 19 (0x13): //GETS  (get string)
-case 20 (0x14): //ACK STRING
-
+case 17 (0x11):	//GETS  (set string)  
+case 18 (0x12):	//RESPONSE STRING  
+case 19 (0x13): //GETS  (get string)  
+case 20 (0x14): //ACK STRING  
+  
 **1 byte** | CM | command  
   
 **1 bytes** | MI | CAN ID/group - Module Index : 02 / 07  
@@ -164,7 +164,7 @@ case 20 (0x14): //ACK STRING
   
 **1 byte** | OS | Offset - Object - Sub-object Index
   
-**2 bytes** | VS | Value Size - amount of bytes to send / to receive: 01 / 02  
+**2 bytes** | VS | Value Size - amount of bytes to send / to receive: 01 / 02 / 04 / 08 /...  
   
 **x byte(s)** | VA | Value(s) inside the data point / register  (temperatures, pressures, states, date, time, etc...)
   
