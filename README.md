@@ -149,16 +149,16 @@ As you can see, JSON technique will be used for the CAN / CAN open like Weishaup
 **SYS** = ID_name of the Weishaupt "Systemgerät" (SG / SG1)  
 **NN** = amount of following telegrams/messages --> "N01","N02","N03",... ("NN":5 means: "N01"{  },...,"N05"{  })  
 **VG** = ?VG stands for what? --> signals that a CAN frame / message / telegram with data will follow  
-
+  
 The main part / the most important thing is the mesage/telegram after: **"VG"** - e.g. {**"VG"**:"02 07 00 2533 02 0002 00ab"} and here is what I could find out:  
 Currently no guarantee for accuracy.  
-
+  
 |   CM   |   MI   |   MX   |   OX   |   OS   |   VS   |   VA   | (official descriptions and field size: http://wem-sg/script/Form_eth_log.js)  
 | 1 Byte | 1 Byte | 1 Byte | 2 Byte | 1 Byte | 2 Byte | x Byte |  (field size)  
-
+  
 **CMD cases:**  
-case 1 (0x01):		//**GET** - numeric value (in this case: "DDC" wants to **GET** numeric data)
-case 2 (0x02):		//**Response** (in this case: "SYS" wants to **Response** numeric data)
+case 1 (0x01):		//**GET** - numeric value (in this case: "DDC" wants to **GET** numeric data)  
+case 2 (0x02):		//**Response** (in this case: "SYS" wants to **Response** numeric data)  
 case 3 (0x03):		//SET - numeric value  
 case 4 (0x04):		//ACK  
 case 17 (0x11):	//GETS  (set string)  
