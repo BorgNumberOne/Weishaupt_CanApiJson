@@ -173,6 +173,7 @@ case 1 (0x01):		//**GET** - numeric value (in this case: "DDC" wants to **GET** 
 case 2 (0x02):		//**Response** (in this case: "SYS" wants to **Response** numeric data)  
 case 3 (0x03):		//SET - numeric value  
 case 4 (0x04):		//ACK  
+case 5 (0x05):    //ERROR (details see below in the old research results)  
 case 17 (0x11):	//GETS  (set string)  
 case 18 (0x12):	//RESPONSE STRING  
 case 19 (0x13): //GETS  (get string)  
