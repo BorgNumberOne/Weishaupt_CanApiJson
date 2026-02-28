@@ -1,4 +1,4 @@
-# Weishaupt CanApiJson - Weishaupt CAPI - Weishaupt CANAPI
+# Weishaupt CanApiJson - Weishaupt CAPI - Weishaupt CANAPI - Weishaupt CAN API
 **(e.g.: {"ID":"12345678","SRC":"SYS","CAPI":{"NN":1,"N01":{"VG":"020201258202000101"}}})**  
 
 Anything you do with your Weishaupt gas boiler or system unit and/or compatible devices in connection with the information published here is at your own risk.
