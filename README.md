@@ -15,9 +15,15 @@ Basically, you just need to know the CanApiJson datagram structure and the CanAp
 *Update:*  
 Node-Red example is here: https://github.com/BorgNumberOne/Weishaupt_CanApiJson/issues/3  
 Home Assistent Integration is here: https://github.com/kraiz/hassio-weishaupt  
+*Update*  
   
 Furthermore, control / configure / read and set the settings of the "Systemgerät" itself (http://wem-sg/) is also realized with/through the Weishaupt CanApiJson / Weishaupt CAPI in the background via the web interface:  
-
+Just analyze the content of:  
+http://wem-sg/script/einstellung.js  
+http://wem-sg/script/Form_eth_log.js  
+  
+  ...for example with ChatGPT. :)
+  
 `curl.exe --http1.1 -H "Connection: keep-alive" -H "User-Agent:" -H "Accept:" -H "Referer: http://192.168.178.124/" -H "Content-Type:" -u admin:Admin123 -d "{\"ID\":\"12345678\",\"SRC\":\"DDC\",\"CAPI\":{\"NN\":1,\"N01\":{\"VG\":\"010600250800000400\"}}}" http://192.168.178.124/ajax/CanApiJson.json'`  
 `{"ID":"12345678","SRC":"SYS","CAPI":{"NN":1,"N01":{"VG":"0206002508000004c0a8b27c"}}}`  
   
