@@ -7,10 +7,11 @@
 
 **short:**  
 Read values from your and control your Weishaupt gas heating device, oil heating system or heat pump with:  
-Curl (AmigaOS, OpenWrt, Dos, Windows, Linux, OpenWrt);  
+Curl (AmigaOS, Dos, Windows, Linux, OpenWrt, AIX, BeOS, Dragonfly BSD, FreeBSD, Haiko, iOS, IRIX, OS/2, QNX, RISC OS, Unix, ...) ;-)  
 Controlling your Weishaupt device even with:  
 FHEM, Node-Red, OpenHab, IoBroker, Home Assistant implementations should be possible without any problems.  
-Basically, you just need to know the CanApiJson datagram structure and the CanApiJson datagram magic patterns mapping table(see below).  
+Basically, you just need to know the CanApiJson datagram structure and the CanApiJson datagram magic patterns mapping table:  
+See below / see : **CanApiJson-extracted_formatted.ods** / **CanApiJson-extracted_formatted.pdf**.  
   
 *Update:*  
 Node-Red example is here: https://github.com/BorgNumberOne/Weishaupt_CanApiJson/issues/3  
@@ -311,10 +312,11 @@ and you will get:
 **Conclusion:**
   
 With the help of the pattern/mapping table you can read/write everything from/to your **CanApiJson compatible** Weishaupt gas heating system, oil heating system, or heat pump.  
-Now, everything is possible in: Home Assistant, Node Red, Linux Terminal command(curl), Windows terminal/shell/command prompt.  
+Now, everything is possible in: Home Assistant, Node Red, Linux Terminal command(curl), Windows terminal/shell/command prompt (curl).
+Even 
   
   
-**Old/draft:**  
+**Old research /draft:**  
 
 The ID is everytime the same --> did Weishaupt forget to implent something unique?  
 
