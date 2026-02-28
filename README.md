@@ -1,8 +1,9 @@
 # Weishaupt CanApiJson - Weishaupt CAPI - Weishaupt CANAPI - Weishaupt CAN API
 **(e.g.: {"ID":"12345678","SRC":"SYS","CAPI":{"NN":1,"N01":{"VG":"020201258202000101"}}})**  
 
-Anything you do with your Weishaupt gas boiler or system unit and/or compatible devices in connection with the information published here is at your own risk.
-No liability is accepted for damages!
+**!!! Anything you do with your Weishaupt gas boiler or system unit and/or compatible devices in connection with the information published here is at your own risk !!!**  
+  
+**!!! No liability is accepted for damages !!!**
 
 **short:**  
 Read values from your and control your Weishaupt gas heating device, oil heating system or heat pump with:  
@@ -10,6 +11,10 @@ Curl (AmigaOS, OpenWrt, Dos, Windows, Linux, OpenWrt);
 Controlling your Weishaupt device even with:  
 FHEM, Node-Red, OpenHab, IoBroker, Home Assistant implementations should be possible without any problems.  
 Basically, you just need to know the CanApiJson datagram structure and the CanApiJson datagram magic patterns mapping table(see below).  
+  
+*Update:*  
+Node-Red example is here: https://github.com/BorgNumberOne/Weishaupt_CanApiJson/issues/3  
+Home Assistent Integration is here: https://github.com/kraiz/hassio-weishaupt  
   
 Furthermore, control / configure / read and set the settings of the "Systemgerät" itself (http://wem-sg/) is also realized with/through the Weishaupt CanApiJson / Weishaupt CAPI in the background via the web interface:  
 
