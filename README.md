@@ -11,7 +11,7 @@ Controlling your Weishaupt device even with:
 FHEM, Node-Red, OpenHab, IoBroker, Home Assistant implementations should be possible without any problems.  
 Basically, you just need to know the CanApiJson datagram structure and the CanApiJson datagram magic patterns mapping table(see below).  
   
-Furthermore, controll / configure / read and set the settings of the "Systemgerät" itself (http://wem-sg/) is also realized with/through the Weishaupt CanApiJson / Weishaupt CAPI in the background via the web interface:  
+Furthermore, control / configure / read and set the settings of the "Systemgerät" itself (http://wem-sg/) is also realized with/through the Weishaupt CanApiJson / Weishaupt CAPI in the background via the web interface:  
 
 `curl.exe --http1.1 -H "Connection: keep-alive" -H "User-Agent:" -H "Accept:" -H "Referer: http://192.168.178.124/" -H "Content-Type:" -u admin:Admin123 -d "{\"ID\":\"12345678\",\"SRC\":\"DDC\",\"CAPI\":{\"NN\":1,\"N01\":{\"VG\":\"010600250800000400\"}}}" http://192.168.178.124/ajax/CanApiJson.json'`  
 `{"ID":"12345678","SRC":"SYS","CAPI":{"NN":1,"N01":{"VG":"0206002508000004c0a8b27c"}}}`  
@@ -220,13 +220,13 @@ the **Modbus register 118** is: **heating water buffer tank temperature_top** ("
 --> The value is: **0235**[HEX] = **565** = **56,5 °C** --> This value matches the **heating water buffer tank temperature_top** while siffing the communication.  
   
   
-## Mapping table (some kind of a)  
+## Mapping table (some kind of a):  
 
 ---new---  
 https://github.com/BorgNumberOne/Weishaupt_CanApiJson/raw/refs/heads/main/CanApiJson-extracted_formatted.ods  
 --new--
   
----old---  
+---old research results---  
 --> a certain Weishaupt address/object on the Weishaupt CanApiJson -side consists of:  
   ID **group** sub-group **object**  
 --> additional information like: "register 1030 - **HK** - HK2"  
