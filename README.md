@@ -357,3 +357,22 @@ CAN API
 CAN bus API 
 controller area network API  
 (surely not: Common ISDN Application Programming Interface)  
+
+<img width="1920" height="1080" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/Weishaupt-Gateway_WEM-Modbus-01-masked.png" />  
+<img width="1920" height="1080" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/Weishaupt-Gateway_WEM-Modbus-02.png" />  
+<img width="1920" height="1080" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/Weishaupt-Gateway_WEM-Modbus-02a.png" />  
+<img width="1920" height="1080" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/Weishaupt-Gateway_WEM-Modbus-05.png" />  
+<img width="1920" height="1080" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/Weishaupt-Gateway_WEM-Modbus-05a.png" />  
+<img width="1920" height="1080" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/Weishaupt-Gateway_WEM-Modbus-package_sniffing.png" />  
+<img width="1920" height="1080" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/Weishaupt-Gateway_WEM-Modbus-package_sniffing2.png" />  
+<img width="1920" height="1080" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/Weishaupt-Gateway_WEM-Modbus-package_sniffing3.png" /> 
+<img width="1920" height="1080" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/Weishaupt_CanApiJson_CAPI_CAN_API_Node-Red01.png" />  
+<img width="1920" height="1080" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/Weishaupt_CanApiJson_CAPI_CAN_API_Node-Red02.png" />  
+<img width="1920" height="1080" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/Weishaupt_CanApiJson_CAPI_CAN_API_Node-Red03.png" />  
+<img width="1920" height="1080" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/Weishaupt_CanApiJson_CAPI_CAN_API_wem-sg_settings_00.png" />  
+<img width="1920" height="1080" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/Weishaupt_CanApiJson_CAPI_CAN_API_wem-sg_settings_01.png" />  
+<img width="1920" height="1080" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/Weishaupt_CanApiJson_CAPI_CAN_API_wem-sg_settings_02.png" />  
+
+
+
+
