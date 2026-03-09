@@ -261,6 +261,35 @@ KNX-Gateway und WEM-Portal-Nutzung schließen sich gegenseitig aus.**
 https://www.haustechnikdialog.de/Forum/t/273123/Regelung-Weishaupt-Biblock?page=2&PostSort=0  
 ( Handbuch für ein Modbus Gateway. Sehr interessant dabei ist, das dort auch die Modbus Registeradressen enthalten sind. Dort wird auch die Anzahl der Schreibzyklen mit 100.000 angegeben. Mit entsprechenden Hinweis behutsam mit Schreibefehlen umzugehen.  
 Ich habe es bei den technischen Dokumenten der WAB gefunden. )
+  
+Well, the Weishaupt Gateway devices...:  
+“Gateway WEM-Modbus” (Weishaupt 48300002722)  
+“Gateway WEM-KNX” (Weishaupt 48300002012)  
+...are becoming increasingly rare.  
+  
+The Internet address...:  
+https://www.loebbeshop.de/weishaupt/zubehoer/gateway-von-wem-auf-modbus-tcp-48300002722/  
+...has not been available for several days.  
+  
+Archived version:    
+https://web.archive.org/web/20241202114520/https://www.loebbeshop.de/weishaupt/zubehoer/gateway-von-wem-auf-modbus-tcp-48300002722/  
+  
+**Furthermore, there are/were more original supplier links for the gateways ("Gateway WEM-Modbus," "Gateway WEM-KNX"):**  
+  
+https://www.heizbude.de/heizung/zubehoer/gateway-wem-modbus-48300002722-von-weishaupt-hb-188258  
+https://www.heizbude.de/heizung/zubehoer/gateway-wem-knx-zur-umsetzung-des-wem-bus-protokolls-auf-knx-standard-48300002012-von-weishaupt-hb-188249  
+https://www.loebbeshop.de/weishaupt/zuebhoer/gateway-wem-knx-48300002012/  
+https://www.loebbeshop.de/weishaupt/zubehoer/gateway-von-wem-auf-modbus-tcp-48300002722/  
+https://www.badexo.de/weishaupt-gateway-wem-knx-zur-umsetzung-des-wem-bus-protokolls-auf-knx-standard?number=WH-48300002012  
+  
+https://web.archive.org/web/20250428194946/https://www.haustechnik-handrich.de/weishaupt-systemtechnik/heizsysteme-fuer-gas-und-oel/zubehoer/gas-bodenstehend/  
+-->  
+https://web.archive.org/web/20250428194946/https://www.haustechnik-handrich.de/weishaupt-systemtechnik/weishaupt-gateway-wem-modbus (729.60 €)  
+https://web.archive.org/web/20250428194946/https://www.haustechnik-handrich.de/weishaupt-systemtechnik/weishaupt-gateway-wem-knx-zur-umsetzung-des-wem-bus-protokolls-auf-knx-standard (425,70 €)  
+  
+( https://www.drehfutterverkauf.com/product/gateway-wem-modbus/  
+https://www.diybuildsupplies.com/product/gateway-wem-modbus-48300002722-von-weishaupt/  
+https://www.armaturenheiztechnik.com/product/gateway-wem-modbus-48300002722-von-weishaupt/  )
 
 ## Mapping table (some kind of a):  
 
