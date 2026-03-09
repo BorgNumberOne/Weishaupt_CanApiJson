@@ -220,6 +220,8 @@ Then I did use a script to keep just the important things inside the .pcapng net
 So you can see below that each object/register on the Weishaupt CanApiJson side has a suitable register on the Modbus TCP side.  
   
 Then you can check the meaning of each Modbus register here:  
+https://www.loebbeshop.de/weishaupt/zubehoer/gateway-von-wem-auf-modbus-tcp-48300002722  
+-->  
 https://www.loebbeshop.de/media/67944/file/static/pdf/weishaupt/manual-wem-modbustcp.pdf  
   
 Now, there is a direct Weishaupt WEM CanApiJson register/object number <--> Modbus TCP register conversation possible. 
@@ -232,7 +234,31 @@ the **Modbus register 118** is: **heating water buffer tank temperature_top** ("
   
 --> The value is: **0235**[HEX] = **565** = **56,5 °C** --> This value matches the **heating water buffer tank temperature_top** while siffing the communication.  
   
+
+Notes / archived homepages:  
+https://web.archive.org/web/20241202114520/https://www.loebbeshop.de/weishaupt/zubehoer/gateway-von-wem-auf-modbus-tcp-48300002722/  
+-->  
+**Einsetzbar für die Brennwertsysteme WTC-G 15 bis 150.  
+Ausgeführt als Hutschienengerät.  
+Modbus-Gateway und WEM-Portal-Nutzung schließen sich gegenseitig aus.**  
+
+https://www.loebbeshop.de/weishaupt/regelungszubehoer?i=2&o=10&v=list  
+https://www.heizbude.de/heizung/zubehoer/gateway-wem-modbus-48300002722-von-weishaupt-hb-188258  
+https://www.heizbude.de/heizung/zubehoer/gateway-wem-knx-zur-umsetzung-des-wem-bus-protokolls-auf-knx-standard-48300002012-von-weishaupt-hb-188249  
   
+https://www.badexo.de/weishaupt-gateway-wem-knx-zur-umsetzung-des-wem-bus-protokolls-auf-knx-standard  
+-->  
+**Weishaupt Gateway WEM-KNX zur Umsetzung des WEM-Bus-Protokolls auf KNX-Standard  
+Gateway WEM-KNX  
+Gateway zur Umsetzung des WEM-Bus-Protokolls auf KNX-Standard.**  
+   
+**Einsatzmöglichkeit:  
+Auslesen und Bereitstellen von definierten Datenpunkten aus dem WEM-System für die KNX-Anwendung  
+Schreibender Zugriff auf definierte Datenpunkte des WEM-Systems durch die KNX-Anwendung Einsetzbar für die Brennwertsysteme WTC-G 15 bis 100.  
+Ausgeführt als Hutschienengerät.  
+KNX-Gateway und WEM-Portal-Nutzung schließen sich gegenseitig aus.**
+  
+
 ## Mapping table (some kind of a):  
 
 ---new---  
