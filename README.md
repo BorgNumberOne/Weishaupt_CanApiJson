@@ -235,7 +235,7 @@ the **Modbus register 118** is: **heating water buffer tank temperature_top** ("
 --> The value is: **0235**[HEX] = **565** = **56,5 °C** --> This value matches the **heating water buffer tank temperature_top** while siffing the communication.  
   
 
-Notes / archived homepages:  
+## Notes / archived homepages:  
 https://web.archive.org/web/20241202114520/https://www.loebbeshop.de/weishaupt/zubehoer/gateway-von-wem-auf-modbus-tcp-48300002722/  
 -->  
 **Einsetzbar für die Brennwertsysteme WTC-G 15 bis 150.  
@@ -257,7 +257,10 @@ Auslesen und Bereitstellen von definierten Datenpunkten aus dem WEM-System für 
 Schreibender Zugriff auf definierte Datenpunkte des WEM-Systems durch die KNX-Anwendung Einsetzbar für die Brennwertsysteme WTC-G 15 bis 100.  
 Ausgeführt als Hutschienengerät.  
 KNX-Gateway und WEM-Portal-Nutzung schließen sich gegenseitig aus.**
-  
+
+https://www.haustechnikdialog.de/Forum/t/273123/Regelung-Weishaupt-Biblock?page=2&PostSort=0  
+( Handbuch für ein Modbus Gateway. Sehr interessant dabei ist, das dort auch die Modbus Registeradressen enthalten sind. Dort wird auch die Anzahl der Schreibzyklen mit 100.000 angegeben. Mit entsprechenden Hinweis behutsam mit Schreibefehlen umzugehen.  
+Ich habe es bei den technischen Dokumenten der WAB gefunden. )
 
 ## Mapping table (some kind of a):  
 
@@ -265,7 +268,7 @@ KNX-Gateway und WEM-Portal-Nutzung schließen sich gegenseitig aus.**
 https://github.com/BorgNumberOne/Weishaupt_CanApiJson/raw/refs/heads/main/CanApiJson-extracted_formatted.ods  
 --new--
   
----old research results---  
+**---old research results---**  
 --> a certain Weishaupt address/object on the Weishaupt CanApiJson -side consists of:  
   ID **group** sub-group **object**  
 --> additional information like: "register 1030 - **HK** - HK2"  
