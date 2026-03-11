@@ -25,15 +25,22 @@ http://wem-sg/script/Form_eth_log.js
   
   ...for example with ChatGPT. :)
   
-`curl.exe --http1.1 -H "Connection: keep-alive" -H "User-Agent:" -H "Accept:" -H "Referer: http://192.168.178.124/" -H "Content-Type:" -u admin:Admin123 -d "{\"ID\":\"12345678\",\"SRC\":\"DDC\",\"CAPI\":{\"NN\":1,\"N01\":{\"VG\":\"010600250800000400\"}}}" http://192.168.178.124/ajax/CanApiJson.json`  
+`curl.exe --http1.1 -H "Connection: keep-alive" -H "User-Agent:" -H "Accept:" -H "Referer: http://wem-sg/" -H "Content-Type:" -u admin:Admin123 -d "{\"ID\":\"12345678\",\"SRC\":\"DDC\",\"CAPI\":{\"NN\":1,\"N01\":{\"VG\":\"010600250800000400\"}}}" http://wem-sg/ajax/CanApiJson.json` 
+  
+-->Weishaupt CanApiJson / Weishaupt CAPI command - get IP address; response:  
+  
 `{"ID":"12345678","SRC":"SYS","CAPI":{"NN":1,"N01":{"VG":"0206002508000004c0a8b27c"}}}`  
   
--->Weishaupt CanApiJson / Weishaupt CAPI command - get IP address; response: `c0 a8 b2 7c` --> `192.168.178.124`  
+-->  `c0 a8 b2 7c`  
+--> `192.168.178.124`  
   
 `curl.exe --http1.1 -H "Connection: keep-alive" -H "User-Agent:" -H "Accept:" -H "Referer: http://192.168.178.124/" -H "Content-Type:" -u admin:Admin123 -d "{\"ID\":\"12345678\",\"SRC\":\"DDC\",\"CAPI\":{\"NN\":1,\"N01\":{\"VG\":\"110600250500001000\"}}}" http://192.168.178.124/ajax/CanApiJson.json`  
-`{"ID":"12345678","SRC":"SYS","CAPI":{"NN":1,"N01":{"VG":"1206002505000010WEM-SG"}}}`  
   
--->Weishaupt CanApiJson / Weishaupt CAPI command - get hostname; response: `WEM-SG`
+-->Weishaupt CanApiJson / Weishaupt CAPI command - get hostname; response:  
+  
+`{"ID":"12345678","SRC":"SYS","CAPI":{"NN":1,"N01":{"VG":"1206002505000010WEM-SG"}}}`  
+
+-->   `WEM-SG`
   
 **long:** just keep reading  
   
