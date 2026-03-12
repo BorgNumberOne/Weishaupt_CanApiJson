@@ -248,7 +248,7 @@ As you can see in the dump/mapping table below, the value of the: **Modbus regis
 --> Regarding the pdf file (https://www.loebbeshop.de/media/67944/file/static/pdf/weishaupt/manual-wem-modbustcp.pdf)  
 the **Modbus register 118** is: **heating water buffer tank temperature_top** ("**Pufferspeicher Temperatur oben**").  
   
---> The value is: **0235**[HEX] = **565** = **56,5 °C** --> This value matches the **heating water buffer tank temperature_top** while siffing the communication.  
+--> The value is: **0235**[HEX] = **565** = **56,5 °C** --> This value matches the **heating water buffer tank temperature_top** while sniffing the communication.  
   
 
 ## Notes / archived homepages:  
