@@ -17,6 +17,11 @@ See below / see : **CanApiJson-extracted_formatted.ods** / **CanApiJson-extracte
 Node-Red example is here: https://github.com/BorgNumberOne/Weishaupt_CanApiJson/issues/3  
 Home Assistent Integration is here: https://github.com/kraiz/hassio-weishaupt  
 *Update*  
+
+**Important:**  
+Using the €$Weishaupt WEM portal$€ and the local control at the same time is not possible.  
+You can either use the €$Weishaupt WEM Portal$€ or the local control.  
+https://www.wemportal.com/Web/Documents/FAQ/FAQ.de.pdf?lang=de
   
 Furthermore, control / configure / read and set the settings of the "Systemgerät" itself (http://wem-sg/) is also realized with/through the Weishaupt CanApiJson / Weishaupt CAPI in the background via the web interface:  
 Just analyze the content of:  
