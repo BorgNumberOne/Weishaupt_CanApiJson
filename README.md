@@ -22,30 +22,34 @@ Home Assistent Integration is here: https://github.com/kraiz/hassio-weishaupt
 Using the €$Weishaupt WEM portal$€ and the local control at the same time is not possible.  
 You can either use the €$Weishaupt WEM Portal$€ or the local control.  
 https://www.wemportal.com/Web/Documents/FAQ/FAQ.de.pdf?lang=de
-  
+
+You cannot use both (WEM Portal and local access) at the same time:  
+google: "Gateway und WEM-Portal-Nutzung schließen sich gegenseitig aus"  
+(WEM Gateway and WEM Portal usage are mutually exclusive.)  
+
 Furthermore, control / configure / read and set the settings of the "Systemgerät" itself (http://wem-sg/) is also realized with/through the Weishaupt CanApiJson / Weishaupt CAPI in the background via the web interface:  
 Just analyze the content of:  
 http://wem-sg/script/einstellung.js  
 http://wem-sg/script/Form_eth_log.js  
   
-  ...for example with ChatGPT. :)
-  
+  ...for example with ChatGPT: :)
+
+-->Weishaupt CanApiJson / Weishaupt CAPI command - get IP address:
 `curl.exe --http1.1 -H "Connection: keep-alive" -H "User-Agent:" -H "Accept:" -H "Referer: http://wem-sg/" -H "Content-Type:" -u admin:Admin123 -d "{\"ID\":\"12345678\",\"SRC\":\"DDC\",\"CAPI\":{\"NN\":1,\"N01\":{\"VG\":\"010600250800000400\"}}}" http://wem-sg/ajax/CanApiJson.json` 
   
--->Weishaupt CanApiJson / Weishaupt CAPI command - get IP address; response:  
-  
+--> response:  
 `{"ID":"12345678","SRC":"SYS","CAPI":{"NN":1,"N01":{"VG":"0206002508000004c0a8b27c"}}}`  
   
--->  `c0 a8 b2 7c`  
+--> `c0 a8 b2 7c`  
 --> `192.168.178.124`  
-  
+
+-->Weishaupt CanApiJson / Weishaupt CAPI command - get hostname;
 `curl.exe --http1.1 -H "Connection: keep-alive" -H "User-Agent:" -H "Accept:" -H "Referer: http://wem-sg/" -H "Content-Type:" -u admin:Admin123 -d "{\"ID\":\"12345678\",\"SRC\":\"DDC\",\"CAPI\":{\"NN\":1,\"N01\":{\"VG\":\"110600250500001000\"}}}" http://wem-sg/ajax/CanApiJson.json`  
   
--->Weishaupt CanApiJson / Weishaupt CAPI command - get hostname; response:  
-  
+--> response:  
 `{"ID":"12345678","SRC":"SYS","CAPI":{"NN":1,"N01":{"VG":"1206002505000010WEM-SG"}}}`  
 
--->   `WEM-SG`
+--> `WEM-SG`
   
 **long:** just keep reading  
   
