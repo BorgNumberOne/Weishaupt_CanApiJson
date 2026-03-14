@@ -11,7 +11,12 @@ Curl (AmigaOS, Dos, Windows, Linux, OpenWrt, AIX, BeOS, Dragonfly BSD, FreeBSD, 
 Controlling your Weishaupt device even with:  
 FHEM, Node-Red, OpenHab, IoBroker, Home Assistant implementations should be possible without any problems.  
 Basically, you just need to know the CanApiJson datagram structure and the CanApiJson datagram magic patterns mapping table:  
-See below / see : **CanApiJson-extracted_formatted.ods** / **CanApiJson-extracted_formatted.pdf**.  
+See below / see:  
+**CanApiJson-extracted_formatted.ods**  
+(https://github.com/BorgNumberOne/Weishaupt_CanApiJson/blob/main/CanApiJson-extracted_formatted.ods)  
+and:  
+**CanApiJson-extracted_formatted.pdf**  
+(https://github.com/BorgNumberOne/Weishaupt_CanApiJson/blob/main/CanApiJson-extracted_formatted.pdf)    
   
 *Update:*  
 Node-Red example is here: https://github.com/BorgNumberOne/Weishaupt_CanApiJson/issues/3  
@@ -34,7 +39,7 @@ http://wem-sg/script/Form_eth_log.js
   
   ...for example with ChatGPT: :)
 
--->Weishaupt CanApiJson / Weishaupt CAPI command - get IP address:
+-->Weishaupt CanApiJson / Weishaupt CAPI command - get IP address:  
 `curl.exe --http1.1 -H "Connection: keep-alive" -H "User-Agent:" -H "Accept:" -H "Referer: http://wem-sg/" -H "Content-Type:" -u admin:Admin123 -d "{\"ID\":\"12345678\",\"SRC\":\"DDC\",\"CAPI\":{\"NN\":1,\"N01\":{\"VG\":\"010600250800000400\"}}}" http://wem-sg/ajax/CanApiJson.json` 
   
 --> response:  
@@ -43,7 +48,7 @@ http://wem-sg/script/Form_eth_log.js
 --> `c0 a8 b2 7c`  
 --> `192.168.178.124`  
 
--->Weishaupt CanApiJson / Weishaupt CAPI command - get hostname;
+-->Weishaupt CanApiJson / Weishaupt CAPI command - get hostname:  
 `curl.exe --http1.1 -H "Connection: keep-alive" -H "User-Agent:" -H "Accept:" -H "Referer: http://wem-sg/" -H "Content-Type:" -u admin:Admin123 -d "{\"ID\":\"12345678\",\"SRC\":\"DDC\",\"CAPI\":{\"NN\":1,\"N01\":{\"VG\":\"110600250500001000\"}}}" http://wem-sg/ajax/CanApiJson.json`  
   
 --> response:  
@@ -109,11 +114,11 @@ http://wem-sg (sg = Systemgerät)
 http://wem-sg.local/  
 http://admin:Admin123@wem-sg/  
 http://admin:Admin123@wem-sg.local/  
-http://wem-sg/script/einstellung.js  
-http://wem-sg/script/Form_eth_log.js  
-http://wem-sg/script/ajax.js  
+http://admin:Admin123@wem-sg/script/einstellung.js  
+http://admin:Admin123@wem-sg/script/Form_eth_log.js  
+http://admin:Admin123@wem-sg/script/ajax.js  
 http://admin:Admin123@wem-sg/ajax/CanApiJson.json -->JSON content changes every 30 seconds (polling).  
-http://wem-sg/sd/systable.csv --> could be figured out with the help of network package sniffing between "Systemgerät" and "Gateway WEM-Modbus"  
+http://admin:Admin123@wem-sg/sd/systable.csv --> could be figured out with the help of network package sniffing between "Systemgerät" and "Gateway WEM-Modbus"  
 
 ## Gateway WEM-Modbus (Weishaupt 48300002722)  
 
@@ -121,16 +126,16 @@ http://wem-sg/sd/systable.csv --> could be figured out with the help of network 
 d0:76:50:3?:??:?? [TAPKOTechnol_?:??:??] (TAPKO Technologies GmbH, Im Gewerbepark A15, 93059 Regensburg, Bayern, DE)  
   
 http://mod-whgw-301501:8080/index.shtml  
-<img width="1788" height="886" alt="Weishaupt-Gateway_WEM-Modbus-01-masked" src="https://github.com/user-attachments/assets/de524872-ca1c-429f-a04d-0d7da4675611" />  
+<img width="1920" height="1080" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/img/Weishaupt-Gateway_WEM-Modbus-01-masked.png" /> 
   
 http://mod-whgw-301501:8080/wem.shtml  - before cofigure the IP setting to the Weishaupt Systemgerät:  
-<img width="1788" height="886" alt="Weishaupt-Gateway_WEM-Modbus-02" src="https://github.com/user-attachments/assets/fb5c2cad-1068-46e3-9b38-87616e3a4e9f" />  
+<img width="1920" height="1080" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/img/Weishaupt-Gateway_WEM-Modbus-02.png" />  
   
 http://mod-whgw-301501:8080/wem.shtml  - after cofigure the IP setting to the Weishaupt Systemgerät:  
-<img width="1920" height="1080" alt="Weishaupt-Gateway_WEM-Modbus-02a" src="https://github.com/user-attachments/assets/f13044b7-466d-4716-8ab3-3938f4129e4e" />  
+<img width="1920" height="1080" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/img/Weishaupt-Gateway_WEM-Modbus-02a.png" />  
   
 http://mod-whgw-301501:8080/modbus.shtml  
-<img width="1920" height="1803" alt="Weishaupt-Gateway_WEM-Modbus-05a" src="https://github.com/user-attachments/assets/8c185b37-27e4-4c88-ad1c-e42b1b148095" />  
+<img width="1920" height="1080" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/img/Weishaupt-Gateway_WEM-Modbus-05a.png" />  
   
 ### Host name and address(es):  
 hostname: MOD-WHGW-xxyyzz (xxyyzz = second part of the MAC address)  
@@ -186,13 +191,14 @@ The main part / the most important thing is the mesage/telegram **after:** **"VG
 **CM cases:**(**C**o**M**mand)  
 case 1 (0x01):		//**GET** - numeric value (in this case: "DDC" wants to **GET** numeric data)  
 case 2 (0x02):		//**Response** (in this case: "SYS" wants to **Response** numeric data)  
-case 3 (0x03):		//SET - numeric value  
-case 4 (0x04):		//ACK  
-case 5 (0x05):    //ERROR (details see below in the old research results)  
-case 17 (0x11):	//GETS  (set string)  
-case 18 (0x12):	//RESPONSE STRING  
-case 19 (0x13): //GETS  (get string)  
-case 20 (0x14): //ACK STRING  
+case 3 (0x03):		//**SET** - numeric value  
+case 4 (0x04):		//**ACK**  
+case 5 (0x05):    //**ERROR** (details see below in the old research results)  
+case 17 (0x11):	//**GETS**  (get a string)  
+case 18 (0x12):	//**RESPONSE STRING**  
+(case 18 (0x12) was incorrectly commented out in: http://admin:Admin123@wem-sg/script/Form_eth_log.js --> "case 18: //GETS" )  
+case 19 (0x13): //**SETS**  (set a string)  
+case 20 (0x14): //**ACK STRING**  
   
 **1 byte** | CM | command  
   
@@ -431,20 +437,20 @@ CAN bus API
 controller area network API  
 (surely not: Common ISDN Application Programming Interface)  
 
-<img width="1920" height="1080" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/Weishaupt-Gateway_WEM-Modbus-01-masked.png" />  
-<img width="1920" height="1080" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/Weishaupt-Gateway_WEM-Modbus-02.png" />  
-<img width="1920" height="1080" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/Weishaupt-Gateway_WEM-Modbus-02a.png" />  
-<img width="1920" height="1080" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/Weishaupt-Gateway_WEM-Modbus-05.png" />  
-<img width="1920" height="1080" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/Weishaupt-Gateway_WEM-Modbus-05a.png" />  
-<img width="1920" height="1080" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/Weishaupt-Gateway_WEM-Modbus-package_sniffing.png" />  
-<img width="1920" height="1080" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/Weishaupt-Gateway_WEM-Modbus-package_sniffing2.png" />  
-<img width="1920" height="1080" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/Weishaupt-Gateway_WEM-Modbus-package_sniffing3.png" /> 
-<img width="1920" height="1080" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/Weishaupt_CanApiJson_CAPI_CAN_API_Node-Red01.png" />  
-<img width="1920" height="1080" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/Weishaupt_CanApiJson_CAPI_CAN_API_Node-Red02.png" />  
-<img width="1920" height="1080" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/Weishaupt_CanApiJson_CAPI_CAN_API_Node-Red03.png" />  
-<img width="1920" height="1080" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/Weishaupt_CanApiJson_CAPI_CAN_API_wem-sg_settings_00.png" />  
-<img width="1920" height="1080" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/Weishaupt_CanApiJson_CAPI_CAN_API_wem-sg_settings_01.png" />  
-<img width="1920" height="1080" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/Weishaupt_CanApiJson_CAPI_CAN_API_wem-sg_settings_02.png" />  
+<img width="1920" height="1080" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/img/Weishaupt-Gateway_WEM-Modbus-01-masked.png" />  
+<img width="1920" height="1080" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/img/Weishaupt-Gateway_WEM-Modbus-02.png" />  
+<img width="1920" height="1080" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/img/Weishaupt-Gateway_WEM-Modbus-02a.png" />  
+<img width="1920" height="1080" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/img/Weishaupt-Gateway_WEM-Modbus-05.png" />  
+<img width="1920" height="1080" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/img/Weishaupt-Gateway_WEM-Modbus-05a.png" />  
+<img width="1920" height="1080" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/img/Weishaupt-Gateway_WEM-Modbus-package_sniffing.png" />  
+<img width="1920" height="1080" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/img/Weishaupt-Gateway_WEM-Modbus-package_sniffing2.png" />  
+<img width="1920" height="1080" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/img/Weishaupt-Gateway_WEM-Modbus-package_sniffing3.png" /> 
+<img width="1920" height="1080" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/img/Weishaupt_CanApiJson_CAPI_CAN_API_Node-Red01.png" />  
+<img width="1920" height="1080" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/img/Weishaupt_CanApiJson_CAPI_CAN_API_Node-Red02.png" />  
+<img width="1920" height="1080" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/img/Weishaupt_CanApiJson_CAPI_CAN_API_Node-Red03.png" />  
+<img width="1920" height="1080" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/img/Weishaupt_CanApiJson_CAPI_CAN_API_wem-sg_settings_00.png" />  
+<img width="1920" height="1080" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/img/Weishaupt_CanApiJson_CAPI_CAN_API_wem-sg_settings_01.png" />  
+<img width="1920" height="1080" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/img/Weishaupt_CanApiJson_CAPI_CAN_API_wem-sg_settings_02.png" />  
 
 
 
