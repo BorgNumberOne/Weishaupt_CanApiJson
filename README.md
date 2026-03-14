@@ -150,7 +150,7 @@ Then, you should see something like this:
 `{"ID":"12345678","SRC":"SYS","CAPI":{"NN":1,"N01":{"VG":"020201258202000101"}}}`
 
 If you have got a compatible device, which can communicate to the Weishaupt system device / control unit ("Systemgerät" - "SG"/"SG1"), then you can put a computer in between both devices and bridge both network sockets.  
-Then you can use Wireshark to see what happens betwwen both devices.  
+Then you can use Wireshark to see what happens between both devices.  
   
 **-->  schematics:**  
 `Weishaupt SG1` <--> `network interface 1 of your computer`|`your computer`|`network interface 2 of your computer` <--> `another device that can communicate to the Weishaupt SG1` (Weishaupt Gateway WEM-Modbus / WEM-KNX)  
