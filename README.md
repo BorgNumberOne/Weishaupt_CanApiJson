@@ -177,28 +177,35 @@ Then there will be a response from **SG1**:
 As you can see, JSON technique will be used for the CAN / CAN open like Weishaupt WEM communication protocol - explanations:    
   
 **ID** = ID_number --> seems to be the same everytime.(did Weishaupt forget to implent something here - why so unique?)  
-**SRC** = Source of the message/telegram (DDC/SYS)   
-**DDC** = ID_name of the Weishaupt Gateway Modbus-WEM  
-**SYS** = ID_name of the Weishaupt "Systemgerät" (SG / SG1)  
+**SRC** = Source of the message/telegram (DDC/SYS / PRT<--(http://admin:Admin123@wem-sg/script/Form_eth_log.js))  
+**PRT** = ID_name of the **P**o**rt**al (Web interface / Browser : if yo change settings at: http://admin:Admin123@wem-sg/ then **PRT** will be used as ID_name)  
+**DDC** = ID_name of the Weishaupt Gateway Modbus-WEM (**D**irect **D**igital **C**ontrol / **D**irect **D**igital **C**ontroller - Building automation / Gateway)  
+**SYS** = ID_name of the Weishaupt "**Sys**temgerät" (SG / SG1)  
 **NN** = amount of following telegrams/messages (max. value seen in the wild: "NN":10)--> "N01","N02","N03",...,"N10" ("NN":10 means: "N01"{  },...,"N10"{  })  
 **VG** = ?VG stands for what? --> signals that a CAN frame / message / telegram with data will follow  
+...could stand for:  
+Value Group (Telegram contains multiple values together)  
+Variable Group (Multiple variables in the CAN frame)  
+Virtual Group (Logical grouping of data points)  
+Value / Variable Gateway (Gateway / translator)  
+Verband- / Verknüpfungsgruppe (German words for: Association / Linked Group)  
   
 The main part / the most important thing is the mesage/telegram **after:** **"VG"** - e.g. {"VG":"**02 07 00 2533 02 0002 00ab**"} and here is what I could find out:    
   
-|   CM   |   MI   |   MX   |   OX   |   OS   |   VS   |   VA   |  (official descriptions and field size: http://wem-sg/script/Form_eth_log.js)  
-| 1 Byte | 1 Byte | 1 Byte | 2 Byte | 1 Byte | 2 Byte | x Byte |  (field size)  
+`|   CM   |   MI   |   MX   |   OX   |   OS   |   VS   |   VA   |`  (official descriptions and field size: http://wem-sg/script/Form_eth_log.js)  
+`| 1 Byte | 1 Byte | 1 Byte | 2 Byte | 1 Byte | 2 Byte | x Byte |`  (field size)  
   
 **CM cases:**(**C**o**M**mand)  
-case 1 (0x01):		//**GET** - numeric value (in this case: "DDC" wants to **GET** numeric data)  
-case 2 (0x02):		//**Response** (in this case: "SYS" wants to **Response** numeric data)  
-case 3 (0x03):		//**SET** - numeric value  
-case 4 (0x04):		//**ACK**  
-case 5 (0x05):    //**ERROR** (details see below in the old research results)  
-case 17 (0x11):	//**GETS**  (get a string)  
-case 18 (0x12):	//**RESPONSE STRING**  
-(case 18 (0x12) was incorrectly commented out in: http://admin:Admin123@wem-sg/script/Form_eth_log.js --> "case 18: //GETS" )  
-case 19 (0x13): //**SETS**  (set a string)  
-case 20 (0x14): //**ACK STRING**  
+`case 1 (0x01)`:		//**GET** - numeric value (in this case: "DDC" wants to **GET** numeric data)  
+`case 2 (0x02)`:		//**Response** (in this case: "SYS" wants to **Response** numeric data)  
+`case 3 (0x03)`:		//**SET** - numeric value  
+`case 4 (0x04)`:		//**ACK**  
+`case 5 (0x05)`:    //**ERROR** (details see below in the old research results)  
+`case 17 (0x11)`:	//**GETS**  (get a string)  
+`case 18 (0x12)`:	//**RESPONSE STRING**  
+(case 18 (0x12): was incorrectly commented out in: http://admin:Admin123@wem-sg/script/Form_eth_log.js --> "case 18: //GETS" )  
+`case 19 (0x13)`: //**SETS**  (set a string)  
+`case 20 (0x14)`: //**ACK STRING**`  
   
 **1 byte** | CM | command  
   
