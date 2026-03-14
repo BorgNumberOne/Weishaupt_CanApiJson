@@ -255,7 +255,7 @@ https://www.loebbeshop.de/media/67944/file/static/pdf/weishaupt/manual-wem-modbu
 Now, there is a direct Weishaupt WEM CanApiJson register/object number <--> Modbus TCP register conversation possible. 
    
   
-As you can see in the dump/mapping table below, the value of the: **Modbus register 118** (Weishaupt WEM block/register/address: 25_6002_0002) is: 0235.  
+As you can see in the dump/mapping table below, the value of the: **Modbus register 118** (Weishaupt WEM block/register/address: 2560_02_0002) is: 0235.  
   
 --> Regarding the pdf file (https://www.loebbeshop.de/media/67944/file/static/pdf/weishaupt/manual-wem-modbustcp.pdf)  
 the **Modbus register 118** is: **heating water buffer tank temperature_top** ("**Pufferspeicher Temperatur oben**").  
@@ -341,7 +341,7 @@ T_cycle: 30 s
     
 ### CURL examples for reading/writing
 **reading**:  
-Reading the **heating water buffer tank temperature_top** ("**Pufferspeicher Temperatur oben**") (CanApiJson adress/group pattern: **25_6002** --> see mapping table)  
+Reading the **heating water buffer tank temperature_top** ("**Pufferspeicher Temperatur oben**") (CanApiJson adress/group pattern: **2560 02** --> see mapping table)  
 (Modbus TCP register: 118):  
   
 **reading with CURL in Windows console/terminal:**  
