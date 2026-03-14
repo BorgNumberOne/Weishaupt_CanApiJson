@@ -178,13 +178,12 @@ As you can see, JSON technique will be used for the CAN / CAN open like Weishaup
 **NN** = amount of following telegrams/messages (max. value seen in the wild: "NN":10)--> "N01","N02","N03",...,"N10" ("NN":10 means: "N01"{  },...,"N10"{  })  
 **VG** = ?VG stands for what? --> signals that a CAN frame / message / telegram with data will follow  
   
-The main part / the most important thing is the mesage/telegram after: **"VG"** - e.g. {**"VG"**:"02 07 00 2533 02 0002 00ab"} and here is what I could find out:  
-Currently no guarantee for accuracy.  
+The main part / the most important thing is the mesage/telegram **after:** **"VG"** - e.g. {"VG":"**02 07 00 2533 02 0002 00ab**"} and here is what I could find out:    
   
-|   CM   |   MI   |   MX   |   OX   |   OS   |   VS   |   VA   | (official descriptions and field size: http://wem-sg/script/Form_eth_log.js)  
+|   CM   |   MI   |   MX   |   OX   |   OS   |   VS   |   VA   |  (official descriptions and field size: http://wem-sg/script/Form_eth_log.js)  
 | 1 Byte | 1 Byte | 1 Byte | 2 Byte | 1 Byte | 2 Byte | x Byte |  (field size)  
   
-**CMD cases:**  
+**CM cases:**(**C**o**M**mand)  
 case 1 (0x01):		//**GET** - numeric value (in this case: "DDC" wants to **GET** numeric data)  
 case 2 (0x02):		//**Response** (in this case: "SYS" wants to **Response** numeric data)  
 case 3 (0x03):		//SET - numeric value  
@@ -210,10 +209,10 @@ case 20 (0x14): //ACK STRING
 **x byte(s)** | VA | Value(s) inside the data point / register  (temperatures, pressures, states, date, time, etc...)
   
   
-If you have better information or any relevant technical terms (perhaps from the CAN open / CAN bus world), please let me know.  
+If you have better information or any relevant technical terms (perhaps from the CAN open / CAN bus world), please let us know.  
   
 Inside the Weishaupt "Gateway WEM-Modbus" I did select just one Modbus TCP register and did sniff the network with the help of Wireshark.  
-In Wireshark, I did use this display filter: (frame contains 43:41:50:49) to just see the frames with: "CAPI".  
+In Wireshark, I did use this display filter: (frame contains 43:41:50:49 / frame contains "CAPI") to just see the frames with: "CAPI".  
 
 So, I did repeat this for every single selectable Modbus TCP register in the web interface of the Weishaupt Gateway WEM-Modbus:
     
