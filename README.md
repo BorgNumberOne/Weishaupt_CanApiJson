@@ -24,8 +24,8 @@ Home Assistent Integration is here: https://github.com/kraiz/hassio-weishaupt
 *Update*  
 
 **Important:**  
-Using the €$Weishaupt WEM portal$€ and the local control at the same time is not possible.  
-You can either use the €$Weishaupt WEM Portal$€ or the local control.  
+Using the **€ $ Weishaupt WEM portal $ €** and the local control at the same time is not possible.  
+You can either use the **€ $ Weishaupt WEM Portal $ €** or the local control.  
 https://www.wemportal.com/Web/Documents/FAQ/FAQ.de.pdf?lang=de
 
 You cannot use both (WEM Portal and local access) at the same time:  
