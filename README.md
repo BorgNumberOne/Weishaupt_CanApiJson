@@ -1,10 +1,13 @@
 # Weishaupt WTC - Weishaupt CAPI - Weishaupt CanApiJson - Weishaupt CANAPI - Weishaupt CAN API - Weishaupt Command API  
 **(e.g.: {"ID":"12345678","SRC":"SYS","CAPI":{"NN":1,"N01":{"VG":"020201258202000101"}}})**  
 
+<img width="30%" height="30%" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/pic/IMG_008.jpg" /> <img width="25%" height="25%" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/pic/IMG_017.jpg" /> <img width="12%" height="12%" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/pic/IMG_015.jpg" />
+
+
 **!!! Anything you do with your Weishaupt gas boiler or system unit and/or compatible devices in connection with the information published here is at your own risk !!!**  
   
-**!!! No liability is accepted for damages !!!**
-
+**!!! No liability is accepted for damages !!!**  
+  
 **short:**  
 Read values from your and control your Weishaupt gas heating device, oil heating system or heat pump with:  
 Curl (AmigaOS, Dos, Windows, Linux, OpenWrt, AIX, BeOS, Dragonfly BSD, FreeBSD, Haiko, iOS, IRIX, OS/2, QNX, RISC OS, Unix, ...) ;-)  
