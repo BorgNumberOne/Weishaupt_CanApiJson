@@ -63,8 +63,10 @@ http://wem-sg/script/Form_eth_log.js
   
 Weishaupt CanApiJson - CAN bus-like / CAN open-like protocol via JSON is a communication protocol between:  
 "**Systemgerät**" (48301122172, 48301122242, 48301122512, 48301122522) and other Weishaupt (compatible) devices like a:  
+----------
 "**Gateway WEM-Modbus**" data protocol converter ( 48300002722 ) or a:  
-"**Gateway WEM-KNX**" data protocol converter ( 48300002012 )
+"**Gateway WEM-KNX**" data protocol converter ( 48300002012 ) or a:  
+"**Set Kopierschutzstecker PC-Tool WEM- Diagnose-Dongle mit Kabel für Heizungsb.**" ( 48300000722 )  
   
 **secifications/declareations (some kind of):**  
   
