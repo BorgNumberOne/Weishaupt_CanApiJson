@@ -39,7 +39,13 @@ https://www.wemportal.com/Web/Documents/FAQ/FAQ.de.pdf?lang=de
 You cannot use both (WEM Portal and local access) at the same time:  
 Search for: "Gateway und WEM-Portal-Nutzung schließen sich gegenseitig aus"  
 (WEM Gateway and WEM Portal usage are mutually exclusive.)  
-
+a) https://www.badexo.de/weishaupt-gateway-wem-knx-zur-umsetzung-des-wem-bus-protokolls-auf-knx-standard  
+b) https://web.archive.org/web/20241202114520/https://www.loebbeshop.de/weishaupt/zubehoer/gateway-von-wem-auf-modbus-tcp-48300002722/  
+-->  
+**Einsetzbar für die Brennwertsysteme WTC-G 15 bis 150.  
+Ausgeführt als Hutschienengerät.  
+Modbus-Gateway und WEM-Portal-Nutzung schließen sich gegenseitig aus.** 
+  
 Furthermore, control, configure, read, and modify the settings of the "Systemgerät" itself (http://admin:Admin123@wem-sg/) is also handled via the Weishaupt CanApiJson / Weishaupt CAPI in the background via the web interface:  
 Just analyze the content of:  
 http://admin:Admin123@wem-sg/script/einstellung.js  
