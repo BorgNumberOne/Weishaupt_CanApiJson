@@ -8,12 +8,18 @@
   
 **!!! No liability is accepted for damages !!!**  
   
-**short:**  
+**Short:**  
 Read values from and control your Weishaupt gas heating device, oil heating system or heat pump with:  
-Curl (AmigaOS, Dos, Windows, Linux, OpenWrt, AIX, BeOS, Dragonfly BSD, FreeBSD, Haiko, iOS, IRIX, OS/2, QNX, RISC OS, Unix, ...) ;-)  
-Controlling your Weishaupt device even with:  
-FHEM, Node-RED, OpenHab, IoBroker, Home Assistant implementations should be possible without any problems.  
-Basically, you just need to know the CanApiJson datagram structure and the CanApiJson datagram magic patterns mapping table:  
+Curl (AmigaOS, DOS, Windows, Linux, OpenWrt, AIX, BeOS, DragonFly BSD, FreeBSD, Haiko, iOS, IRIX, OS/2, QNX, RISC OS, Unix, ...) ;-)  
+Controlling your Weishaupt device with:  
+FHEM,  
+Node-RED,  
+openHAB,  
+ioBroker,  
+Home Assistant  
+...should work without any issues.  
+  
+Basically, you only need to understand the **CanApiJson CAPI** / **VG** datagram structure and the corresponding mapping table (magic patterns):  
 See below / see:  
 **CanApiJson-extracted_formatted.ods**  
 (https://github.com/BorgNumberOne/Weishaupt_CanApiJson/blob/main/CanApiJson-extracted_formatted.ods)  
@@ -23,19 +29,18 @@ and:
   
 *Update:*  
 Node-RED example is here: https://github.com/BorgNumberOne/Weishaupt_CanApiJson/issues/3  
-Home Assistant Integration is here: https://github.com/kraiz/hassio-weishaupt  
-*Update*  
+Home Assistant Integration is available here: https://github.com/kraiz/hassio-weishaupt  
 
 **Important:**  
-Using the **€ $ Weishaupt WEM portal $ €** and the local control at the same time is not possible.  
-You can either use the **€ $ Weishaupt WEM Portal $ €** or the local control.  
+Using the **Weishaupt WEM portal** and local control at the same time is not possible.  
+You can either use the **Weishaupt WEM portal** or local control.  
 https://www.wemportal.com/Web/Documents/FAQ/FAQ.de.pdf?lang=de
 
 You cannot use both (WEM Portal and local access) at the same time:  
-google: "Gateway und WEM-Portal-Nutzung schließen sich gegenseitig aus"  
+Search for: "Gateway und WEM-Portal-Nutzung schließen sich gegenseitig aus"  
 (WEM Gateway and WEM Portal usage are mutually exclusive.)  
 
-Furthermore, control / configure / read and set the settings of the "Systemgerät" itself (http://wem-sg/) is also realized with/through the Weishaupt CanApiJson / Weishaupt CAPI in the background via the web interface:  
+Furthermore, control, configure, read, and modify the settings of the "Systemgerät" itself (http://wem-sg/) is also handled via the Weishaupt CanApiJson / Weishaupt CAPI in the background via the web interface:  
 Just analyze the content of:  
 http://wem-sg/script/einstellung.js  
 http://wem-sg/script/Form_eth_log.js  
@@ -59,20 +64,20 @@ http://wem-sg/script/Form_eth_log.js
 
 --> `WEM-SG`
   
-**long:** just keep reading  
+**Long:** just keep reading  
   
-Weishaupt CanApiJson - CAN bus-like / CAN open-like protocol via JSON is a communication protocol between:  
+Weishaupt CanApiJson - CAN bus-like / CANopen-like protocol via JSON is a communication protocol between:  
 "**Systemgerät**" (48301122172, 48301122242, 48301122512, 48301122522) and other Weishaupt (compatible) devices like a:  
 ----------
 "**Gateway WEM-Modbus**" data protocol converter ( 48300002722 ) or a:  
 "**Gateway WEM-KNX**" data protocol converter ( 48300002012 ) or a:  
 "**Set Kopierschutzstecker PC-Tool WEM- Diagnose-Dongle mit Kabel für Heizungsb.**" ( 48300000722 )  
   
-**secifications/declareations (some kind of):**  
+**specifications/declarations (some kind of):**  
   
 **WEM** = Weishaupt Energy Manager / Weishaupt Energy Management  
 **Weishaupt WEM bus protocol** = "Weishaupt WEM-Bus-Protokoll"  
-**(Weishaupt) CanApiJson protocol** = Weishaupt CanApiJson - CAN bus-like / CAN open -like via JSON -protocol  
+**(Weishaupt) CanApiJson protocol** = Weishaupt CanApiJson - CAN bus-like / CANopen -like via JSON -protocol  
 **(Weishaupt) CanApiJson register/object number** = Weishaupt CanApiJson block address number or CanApiJson register/object number = Weishaupt WEM CanApiJson register/object number  
   
 The resulting generated block address/register number(magic pattern - see mapping table below) on the Weishaupt CanApiJson protocol side may vary or could look different and it could depend on the way of presence of your Weishaupt devices or on your constellation of Weishaupt devices:  
@@ -86,13 +91,13 @@ The resulting generated block address/register number(magic pattern - see mappin
   
 It is therefore very likely that the “Gateway WEM-Modbus” (or a “Gateway WEM-KNX”) first needs/reads the Weishaupt SG1 system table:  
 http://wem-sg/sd/systable.csv  
-for a suitable Weishaupt CanApiJson block address/register number specification/generation to create functioning JSON telegrams.  
+to generate suitable Weishaupt CanApiJson block address/register number specification to create functioning JSON telegrams.  
   
-Here you will find research results regarding the details and structure/function of the communication interface ("JSON") of a Weishaupt system device / control unit ("Systemgerät" - "SG"/"SG1").  
+This document contains research results on the structure and functionality of the communication interface ("JSON") of a Weishaupt system device / control unit ("Systemgerät" - "SG"/"SG1").  
 
 **If you have any Weishaupt CanApiJson related news or corrections or any updates, please feel free to improve this documentation.**
 
-This document makes it easy to directly integrate, read, control, regulate, and modify parameters of Weishaupt devices that use this CanApiJson protocol (gas boiler, heat pump, etc.) in DOS, Windows, AmigaOs, OpenWRT, Node-RED, Home Assistant, FHEM, ioBroker, etc.  
+This document makes it easy to integrate, read, control, and modify parameters of Weishaupt devices that use this CanApiJson protocol (gas boiler, heat pump, etc.) in DOS, Windows, AmigaOs, OpenWRT, Node-RED, Home Assistant, FHEM, ioBroker, etc.  
   
 If the JSON function is enabled in the settings of the Weishaupt "Systemgerät" (SG / SG1 - Weishaupt control unit for the gas boiler/heat pump/...) and the Weishaupt "Systemgerät" is connected to the local network via the RJ-45 interface (DHCP server enabled or manually assigned IP address), then this address can be accessed with a browser:  
   
@@ -100,7 +105,7 @@ http://admin:Admin123@wem-sg/ajax/CanApiJson.json
   
 Well, accessing this address with a browser is primarily for testing purposes only.  
 Actual writing/reading values ​​from the "Systemgerät" / the heating control unit works differently:  
-**via "POST" commands** (or via CURL)  
+**via POST requests** (e.g., using curl)  
     
 See details below.  
 Furthermore a **Weishaupt Gateway WEM-Modbus** can be used to connect the world of Weishaupt WEM protocol with the world of Modbus TCP protocol.
@@ -123,7 +128,7 @@ http://admin:Admin123@wem-sg/script/einstellung.js
 http://admin:Admin123@wem-sg/script/Form_eth_log.js  
 http://admin:Admin123@wem-sg/script/ajax.js  
 http://admin:Admin123@wem-sg/ajax/CanApiJson.json -->JSON content changes every 30 seconds (polling).  
-http://admin:Admin123@wem-sg/sd/systable.csv --> could be figured out with the help of network package sniffing between "Systemgerät" and "Gateway WEM-Modbus"  
+http://admin:Admin123@wem-sg/sd/systable.csv --> could be figured out with the help of network packet sniffing between "Systemgerät" and "Gateway WEM-Modbus"  
 
 ## Gateway WEM-Modbus (Weishaupt 48300002722)  
 
@@ -133,10 +138,10 @@ d0:76:50:3?:??:?? [TAPKOTechnol_?:??:??] (TAPKO Technologies GmbH, Im Gewerbepar
 http://mod-whgw-301501:8080/index.shtml  
 <img width="1920" height="1080" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/img/Weishaupt-Gateway_WEM-Modbus-01-masked.png" /> 
   
-http://mod-whgw-301501:8080/wem.shtml  - before cofigure the IP setting to the Weishaupt Systemgerät:  
+http://mod-whgw-301501:8080/wem.shtml  - before configure the IP setting to the Weishaupt Systemgerät:  
 <img width="1920" height="1080" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/img/Weishaupt-Gateway_WEM-Modbus-02.png" />  
   
-http://mod-whgw-301501:8080/wem.shtml  - after cofigure the IP setting to the Weishaupt Systemgerät:  
+http://mod-whgw-301501:8080/wem.shtml  - after configure the IP setting to the Weishaupt Systemgerät:  
 <img width="1920" height="1080" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/img/Weishaupt-Gateway_WEM-Modbus-02a.png" />  
   
 http://mod-whgw-301501:8080/modbus.shtml  
@@ -154,7 +159,7 @@ http://MOD-WHGW-xxyyzz.local:8080
 Then, you should see something like this:  
 `{"ID":"12345678","SRC":"SYS","CAPI":{"NN":1,"N01":{"VG":"020201258202000101"}}}`
 
-If you have got a compatible device, which can communicate to the Weishaupt system device / control unit ("Systemgerät" - "SG"/"SG1"), then you can put a computer in between both devices and bridge both network sockets.  
+If you have a compatible device, which can communicate to the Weishaupt system device / control unit ("Systemgerät" - "SG"/"SG1"), then you can place a computer between the two devices and bridge the two network interfaces.  
 Then you can use Wireshark to see what happens between both devices.  
   
 **-->  schematics:**  
@@ -179,9 +184,9 @@ Then there will be a response from **SG1**:
   
 `{"ID":"12345678","SRC":"SYS","CAPI":{"NN":5,"N01":{"VG":"020700254100000100"},"N02":{"VG":"020700253200000200b2"},"N03":{"VG":"020700253302000200ab"},"N04":{"VG":"020700253700000200c4"},"N05":{"VG":"020901263900000100"}}}`  
   
-As you can see, JSON technique will be used for the CAN / CAN open like Weishaupt WEM communication protocol - explanations:    
+As you can see, JSON is used for the CAN / CANopen like Weishaupt WEM communication protocol - explanations:    
   
-**ID** = ID_number --> seems to be the same every time. (Did Weishaupt forget to implement something here - why so unique: "12345678"?)  
+**ID** = ID_number --> appears to be the same every time. (Did Weishaupt forget to implement something here - why so unique: "12345678"?)  
 **SRC** = Source of the message/telegram (DDC/SYS / PRT<--(http://admin:Admin123@wem-sg/script/Form_eth_log.js))  
 **PRT** = ID_name of the **P**o**rt**al (Web interface / Browser : if you change settings at: http://admin:Admin123@wem-sg/ then **PRT** will be used as ID_name)  
 **DDC** = ID_name of the Weishaupt Gateway Modbus-WEM (**D**irect **D**igital **C**ontrol / **D**irect **D**igital **C**ontroller - Building automation / Gateway)  
@@ -195,10 +200,10 @@ Virtual Group (Logical grouping of data points)
 Value / Variable Gateway (Gateway / translator)  
 Verband- / Verknüpfungsgruppe (German words for: Association / Linked Group)  
   
-The main part / the most important thing is the message/telegram **after:** **"VG"** - e.g. {"VG":"**02 07 00 2533 02 0002 00ab**"} and here is what I could find out:    
+The main part / the most important thing is the message/telegram **following:** **"VG"** - e.g. {"VG":"**02 07 00 2533 02 0002 00ab**"} and here is what I could find out:    
   
 `|   CM   |   MI   |   MX   |   OX   |   OS   |   VS   |   VA   |`  (official descriptions and field size: http://wem-sg/script/Form_eth_log.js)  
-`| 1 Byte | 1 Byte | 1 Byte | 2 Byte | 1 Byte | 2 Byte | x Byte |`  (field size)  
+`| 1 byte | 1 byte | 1 byte | 2 bytes | 1 byte | 2 bytes | x byte(s) |`  (field size)  
   
 **CM cases:**(**C**o**M**mand)  
 `case 1 (0x01)`:		//**GET** - numeric value (in this case: "DDC" wants to **GET** numeric data)  
@@ -227,7 +232,7 @@ The main part / the most important thing is the message/telegram **after:** **"V
 **x byte(s)** | VA | Value(s) inside the data point / register  (temperatures, pressures, states, date, time, etc...)
   
   
-If you have better information or any relevant technical terms (perhaps from the CAN open / CAN bus world), please let us know.  
+If you have better information or any relevant technical terms (perhaps from the CANopen / CAN bus world), please let us know.  
   
 Inside the Weishaupt "Gateway WEM-Modbus" I did select just one Modbus TCP register and did sniff the network with the help of Wireshark.  
 In Wireshark, I did use this display filter: (frame contains 43:41:50:49 / frame contains "CAPI") to just see the frames with: "CAPI".  
@@ -238,7 +243,7 @@ So, I did repeat this for every single selectable Modbus TCP register in the web
 **b)** sniffing the network - 6 request/response pairs ("DDC"/"SYS" messages) while using the wireshark filter: "(frame contains 43:41:50:49)"  
 **c)** storing the result into a .pcapng file  
 **d)** disable the previously selected Modbus TCP register in the Weishaupt Gateway WEM-Modbus web interface  
-**e)** goto "a)"  
+**e)** go to  step "a)"  
 
 Different request-response pairs (“DDC”/“SYS” message block/pair) have different cycle times.  
 To ensure the consistency and uniqueness of the Weishaupt CanApiJson messages (nothing else is sent from the gateway)  
@@ -246,10 +251,10 @@ and to figure out the cycle/polling time and to clearly determine both,
 6 request-response pairs (“DDC”/“SYS” message block/pair) for each individual activated Modbus TCP register were dumped/sniffed.  
   
 For example (see mapping table below):  
-Modbus register: 1030 (Weishaupt CanApiJson block/register/address: 25_3302) will by polled every 30 seconds by the Weishaupt Gateway WEM-Modbus.  
+Modbus register: 1030 (Weishaupt CanApiJson block/register/address: 25_3302) will be polled every 30 seconds by the Weishaupt Gateway WEM-Modbus.  
 Modbus register: 114 (Weishaupt CanApiJson block/register/address: 27_f902) will be polled every 10 seconds by the Weishaupt Gateway WEM-Modbus.
   
-Then I did use a script to keep just the important things inside the .pcapng network package dump files and to make some reformatting changes for clarity.  
+Then I did use a script to keep just the important things inside the .pcapng network packet dump files and to make some reformatting changes for clarity.  
 So you can see below that each object/register on the Weishaupt CanApiJson side has a suitable register on the Modbus TCP side.  
   
 Then you can check the meaning of each Modbus register here:  
@@ -346,7 +351,7 @@ T_cycle: 30 s
     
 ### CURL examples for reading/writing
 **reading**:  
-Reading the **heating water buffer tank temperature_top** ("**Pufferspeicher Temperatur oben**") (CanApiJson adress/group pattern: **2560 02** --> see mapping table)  
+Reading the **heating water buffer tank temperature_top** ("**Pufferspeicher Temperatur oben**") (CanApiJson address/group pattern: **2560 02** --> see mapping table)  
 (Modbus TCP register: 118):  
   
 **reading with CURL in Windows console/terminal:**  
@@ -362,7 +367,7 @@ Reading the **heating water buffer tank temperature_top** ("**Pufferspeicher Tem
 
   
 **writing & confirm/response writing:**  
-Writing the: **"Pre-flow set temperature - Comfort"** (**"Vorlaufsolltemperatur Komfort"**) (CanApiJson adress/group pattern: **25_6b02** --> see mapping table)  
+Writing the: **"Pre-flow set temperature - Comfort"** (**"Vorlaufsolltemperatur Komfort"**) (CanApiJson address/group pattern: **25_6b02** --> see mapping table)  
 (Modbus TCP register: 110 on the Gateway WEM-Modbus side):  
   
 I did enable just the register 110 in the **Weishaupt Gateway WEM-Modbus data protocol converter** web interface.  
@@ -371,7 +376,7 @@ Then, I used PowerHud modbustester software
 and changed the mode from **03-Read Holding Registers** to: **06-Write Single Register**.  
 After this, I changed the default value from 700 (→ 70,0 °C = **02BC** [HEX]) to 655 (→ 65,5 °C = **028F** [HEX]).  
   
-In Wireshark I could sniff/dump these Weishaupt CanApiJson frame packages:  
+In Wireshark I could sniff/dump these Weishaupt CanApiJson frame packets:  
   
 **Weishaupt Gateway WEM-Modbus data protocol converter** ----> **Weishaupt SG (Systemgerät)**:  
 `{"ID":"12345678","SRC":"DDC","CAPI":{"NN":1,"N01":{"VG":"**03**0200256b020002**028F**"}}}`  
@@ -380,8 +385,8 @@ In Wireshark I could sniff/dump these Weishaupt CanApiJson frame packages:
 `{"ID":"12345678","SRC":"SYS","CAPI":{"NN":1,"N01":{"VG":"**04**0200256b020002**028F**"}}}`
   
 You can see the payload of: **028F** (→ 65,5 °C = **028F** [HEX]) and you can see the new commands: **03**/**04**  
-**03** seems to be: request writing  
-**03** seems to be: response/confirm writing  
+**03** seems to be: write request
+**03** seems to be: write response/confirmation  
  
 **05** seems to be: error / something went wrong  
 try this:  
@@ -404,15 +409,14 @@ and you will get:
 **Conclusion:**
   
 With the help of the pattern/mapping table you can read/write everything from/to your **CanApiJson compatible** Weishaupt gas heating system, oil heating system, or heat pump.  
-Now, everything is possible in: Home Assistant, Node Red, Linux Terminal command(curl), Windows terminal/shell/command prompt (curl).
-Even 
-  
+Now everything is possible using Home Assistant, Node-RED, Linux terminal (curl), Windows command line, etc.
+
   
 **Old research /draft:**  
 
 The ID is every time the same --> did Weishaupt forget to implement something unique?  
 
-**After setting up and configure the Weishaupt Gateway WEM-Modbus, the device will send a package ("DDC") to the "Systemgerät":**  
+**After set up and configured the Weishaupt Gateway WEM-Modbus, the device will send a packet ("DDC") to the "Systemgerät":**  
   
 POST /ajax/CanApiJson.json HTTP/1.1  
 Host: <IP of the "Systemgerät">  
@@ -423,7 +427,7 @@ Connection: keep-alive
 
 {"ID":"12345678","SRC":"DDC","CAPI":{"NN":10,"N01":{"VG":"01010027f902000200"},"N02":{"VG":"010100261f02000200"},"N03":{"VG":"010100259c01000200"},"N04":{"VG":"010100259d01000200"},"N05":{"VG":"01010026fe02000200"},"N06":{"VG":"010100256202000100"},"N07":{"VG":"010100256203000100"},"N08":{"VG":"010200252c02000200"},"N09":{"VG":"010200250702000200"},"N10":{"VG":"010300254902000100"}}}
 
-**After this, the "Systemgerät" will send packages ("SYS") to the Weishaupt Gateway WEM-Modbus (polling ever 30 seconds):**  
+**After this, the "Systemgerät" will send packets ("SYS") to the Weishaupt Gateway WEM-Modbus (polling every 30 seconds):**  
 
 {"ID":"12345678","SRC":"SYS","CAPI":{"NN":10,"N01":{"VG":"0203002529020002026e"},"N02":{"VG":"020300255102000100"},"N03":{"VG":"020700254100000100"},"N04":{"VG":"020700253200000200b6"},"N05":{"VG":"020700253302000200ab"},"N06":{"VG":"020700253700000200c2"},"N07":{"VG":"020901263900000100"},"N08":{"VG":"020201252c0200020190"},"N09":{"VG":"020201250702000201d0"},"N10":{"VG":"02040025010000028000"}}}
 
