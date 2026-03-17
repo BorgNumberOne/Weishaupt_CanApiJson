@@ -218,7 +218,7 @@ The main part / the most important thing is the message/telegram **after:** **"V
 
 **1 byte** | MX | CAN sub-ID/sub-group - Member Index - Module Extension : 00 / 01 /  
 
-**2 byte** | OX | Object - Object Index : 2541 / 2532 / 2533 / 2537 / 2639 /
+**2 bytes** | OX | Object - Object Index : 2541 / 2532 / 2533 / 2537 / 2639 /
   
 **1 byte** | OS | Offset - Object - Sub-object Index
   
