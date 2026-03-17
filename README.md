@@ -1,4 +1,4 @@
-# Weishaupt WTC - Weishaupt CAPI - Weishaupt CanApiJson - Weishaupt CANAPI - Weishaupt CAN API - Weishaupt Command API  
+# Weishaupt WTC - Weishaupt CAPI - Weishaupt CanApiJson - Weishaupt CANAPI - Weishaupt CANopen-like protocol, Weishaupt CAN API - Weishaupt Command API  
 **(e.g.: {"ID":"12345678","SRC":"SYS","CAPI":{"NN":1,"N01":{"VG":"020201258202000101"}}})**  
 
 <img width="30%" height="30%" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/pic/IMG_008.jpg" /> <img width="25%" height="25%" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/pic/IMG_017.jpg" /> <img width="12%" height="12%" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/pic/IMG_015.jpg" />
