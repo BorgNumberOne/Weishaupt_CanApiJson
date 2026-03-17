@@ -181,9 +181,9 @@ Then there will be a response from **SG1**:
   
 As you can see, JSON technique will be used for the CAN / CAN open like Weishaupt WEM communication protocol - explanations:    
   
-**ID** = ID_number --> seems to be the same everytime.(did Weishaupt forget to implent something here - why so unique?)  
+**ID** = ID_number --> seems to be the same everytime. (Did Weishaupt forget to implent something here - why so unique: "12345678"?)  
 **SRC** = Source of the message/telegram (DDC/SYS / PRT<--(http://admin:Admin123@wem-sg/script/Form_eth_log.js))  
-**PRT** = ID_name of the **P**o**rt**al (Web interface / Browser : if yo change settings at: http://admin:Admin123@wem-sg/ then **PRT** will be used as ID_name)  
+**PRT** = ID_name of the **P**o**rt**al (Web interface / Browser : if you change settings at: http://admin:Admin123@wem-sg/ then **PRT** will be used as ID_name)  
 **DDC** = ID_name of the Weishaupt Gateway Modbus-WEM (**D**irect **D**igital **C**ontrol / **D**irect **D**igital **C**ontroller - Building automation / Gateway)  
 **SYS** = ID_name of the Weishaupt "**Sys**temgerät" (SG / SG1)  
 **NN** = amount/number of following **VG** telegrams / **VG** messages (max. value seen in the wild: "NN":10)--> "N01","N02","N03",...,"N10" ("NN":10 means: "N01"{  },...,"N10"{  })  
