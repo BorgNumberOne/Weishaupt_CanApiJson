@@ -186,7 +186,7 @@ As you can see, JSON technique will be used for the CAN / CAN open like Weishaup
 **PRT** = ID_name of the **P**o**rt**al (Web interface / Browser : if yo change settings at: http://admin:Admin123@wem-sg/ then **PRT** will be used as ID_name)  
 **DDC** = ID_name of the Weishaupt Gateway Modbus-WEM (**D**irect **D**igital **C**ontrol / **D**irect **D**igital **C**ontroller - Building automation / Gateway)  
 **SYS** = ID_name of the Weishaupt "**Sys**temgerät" (SG / SG1)  
-**NN** = amount of following telegrams/messages (max. value seen in the wild: "NN":10)--> "N01","N02","N03",...,"N10" ("NN":10 means: "N01"{  },...,"N10"{  })  
+**NN** = amount/number of following **VG** telegrams / **VG** messages (max. value seen in the wild: "NN":10)--> "N01","N02","N03",...,"N10" ("NN":10 means: "N01"{  },...,"N10"{  })  
 **VG** = ?VG stands for what? --> signals that a CAN frame / message / telegram with data will follow  
 ...could stand for:  
 Value Group (Telegram contains multiple values together)  
@@ -350,7 +350,7 @@ Reading the **heating water buffer tank temperature_top** ("**Pufferspeicher Tem
 (Modbus TCP register: 118):  
   
 **reading with CURL in Windows console/terminal:**  
-`curl.exe --http1.1 -H "Connection: keep-alive" -H "User-Agent:" -H "Accept:" -H "Referer: http://wem-sg/" -H "Content-Type:" -u admin:Admin123 -d "{\"ID\":\"12345678\",\"SRC\":\"DDC\",\"CAPI\":{\"NN\":1,\"N01\":{\"VG\":\"010100256002000200\"}}}" http://wem-sg/ajax/CanApiJson.json`  
+`curl.exe --http1.1 -H "Connection: keep-alive" -H "User-Agent:" -H "Accept:" -H "Referer: http://wem-sg/" -H "Content-Type:" -u admin:Admin123 -d "{\"ID\":\"00000001\",\"SRC\":\"DDC\",\"CAPI\":{\"NN\":1,\"N01\":{\"VG\":\"010100256002000200\"}}}" http://wem-sg/ajax/CanApiJson.json`  
 -->this is the request  
   
 **response:**  
