@@ -40,10 +40,10 @@ You cannot use both (WEM Portal and local access) at the same time:
 Search for: "Gateway und WEM-Portal-Nutzung schließen sich gegenseitig aus"  
 (WEM Gateway and WEM Portal usage are mutually exclusive.)  
 
-Furthermore, control, configure, read, and modify the settings of the "Systemgerät" itself (http://wem-sg/) is also handled via the Weishaupt CanApiJson / Weishaupt CAPI in the background via the web interface:  
+Furthermore, control, configure, read, and modify the settings of the "Systemgerät" itself (http://admin:Admin123@wem-sg/) is also handled via the Weishaupt CanApiJson / Weishaupt CAPI in the background via the web interface:  
 Just analyze the content of:  
-http://wem-sg/script/einstellung.js  
-http://wem-sg/script/Form_eth_log.js  
+http://admin:Admin123@wem-sg/script/einstellung.js  
+http://admin:Admin123@wem-sg/script/Form_eth_log.js  
   
   ...for example with ChatGPT: :)
 
@@ -90,7 +90,7 @@ The resulting generated block address/register number(magic pattern - see mappin
 **RF**, **RG1**, **RG2**, **KA**  
   
 It is therefore very likely that the “Gateway WEM-Modbus” (or a “Gateway WEM-KNX”) first needs/reads the Weishaupt SG1 system table:  
-http://wem-sg/sd/systable.csv  
+http://admin:Admin123@wem-sg/sd/systable.csv  
 to generate suitable Weishaupt CanApiJson block address/register number specification to create functioning JSON telegrams.  
   
 This document contains research results on the structure and functionality of the communication interface ("JSON") of a Weishaupt system device / control unit ("Systemgerät" - "SG"/"SG1").  
