@@ -68,7 +68,7 @@ http://wem-sg/script/Form_eth_log.js
   
 Weishaupt CanApiJson - CAN bus-like / CANopen-like protocol via JSON is a communication protocol between:  
 "**Systemgerät**" (48301122172, 48301122242, 48301122512, 48301122522) and other Weishaupt (compatible) devices like a:  
-----------
+
 "**Gateway WEM-Modbus**" data protocol converter ( 48300002722 ) or a:  
 "**Gateway WEM-KNX**" data protocol converter ( 48300002012 ) or a:  
 "**Set Kopierschutzstecker PC-Tool WEM- Diagnose-Dongle mit Kabel für Heizungsb.**" ( 48300000722 )  
@@ -98,6 +98,41 @@ This document contains research results on the structure and functionality of th
 **If you have any Weishaupt CanApiJson related news or corrections or any updates, please feel free to improve this documentation.**
 
 This document makes it easy to integrate, read, control, and modify parameters of Weishaupt devices that use this CanApiJson protocol (gas boiler, heat pump, etc.) in DOS, Windows, AmigaOs, OpenWRT, Node-RED, Home Assistant, FHEM, ioBroker, etc.  
+  
+**CSV files on the Weishaupt Systemgerät micro SD card**  
+  
+The first indications of the CANopen-like protocol used by the Weishaupt "Systemgerät" (system device) can already be found in the .CSV files on the micro SD card, which is located in the micro SD card slot on the underside of the Weishaupt "Systemgerät" (system device).  
+  
+Example content of:  
+`22011701.CSV`:  
+  
+`DP-Nr;DP01;DP02;DP03;DP04;DP05;DP06;DP07;DP08;DP09;DP0a`  
+`MI;02;03;07;07;07;09;07;09;07;02`  
+`MX;00;00;00;00;00;01;00;01;00;02`  
+`OX;2503;2529;2545;2534;2536;2615;2533;2613;2537;2507`  
+`OS;00;02;00;00;00;02;02;02;00;00`  
+`INT;0028;0028;0028;0028;0028;0028;0028;0028;0028;0028`  
+`UNIT;01;01;01;03;01;01;01;06;01;01`  
+`FF;0a;0a;0a;64;0a;0a;0a;01;0a;0a`  
+  
+`Date;Value`  
+`17.01.22 11:38:46;0,4;13,4;57,0;98,4;13,0;11,1;10,4;806,0;14,2;;;;;;;;;;;`  
+...  
+`17.01.22 11:56:46;0,4;29,4;57,0;100,1;49,3;50,1;21,8;802,0;38,8;;;;;;;;;;;`  
+
+Files on the SD card are mapped to:  
+`http://admin:Admin123@wem-sg/sd/`  
+  
+Example in this case:  
+`http://admin:Admin123@wem-sg/sd/22011701.CSV`
+
+The filename is composed as follows:  
+` YY | MM | DD | xx | .CSV ` (xx can be: 01 or 02)
+
+Inside the example .CSV file there you can already see the data fields used / the identifiers of the data fields: **MI**, **MX**, **OX**, **OS**  
+This structure and the data fields/data field labels within the .CSV files are also used in the VG telegrams within the Weishaupt CANopen-like protocol / the CanApiJson protocol.  
+
+**The Weishaupt CAPI - CANopen-like protocol / datagram:**
   
 If the JSON function is enabled in the settings of the Weishaupt "Systemgerät" (SG / SG1 - Weishaupt control unit for the gas boiler/heat pump/...) and the Weishaupt "Systemgerät" is connected to the local network via the RJ-45 interface (DHCP server enabled or manually assigned IP address), then this address can be accessed with a browser:  
   
@@ -129,7 +164,10 @@ http://admin:Admin123@wem-sg/script/Form_eth_log.js
 http://admin:Admin123@wem-sg/script/ajax.js  
 http://admin:Admin123@wem-sg/ajax/CanApiJson.json -->JSON content changes every 30 seconds (polling).  
 http://admin:Admin123@wem-sg/sd/systable.csv --> could be figured out with the help of network packet sniffing between "Systemgerät" and "Gateway WEM-Modbus"  
-
+http://admin:Admin123@wem-sg/sd/22011701.CSV  --> (example gas heating device logging file)
+http://admin:Admin123@wem-sg/sd/DLOG_ACT.CSV  
+http://admin:Admin123@wem-sg/sd/FAC_TEST.TXT  --> content: `--SDCARD FACTORY TEST ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789--`
+  
 ## Gateway WEM-Modbus (Weishaupt 48300002722)  
 
 ### MAC address(es) (possible):  
