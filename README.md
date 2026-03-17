@@ -110,7 +110,7 @@ This document makes it easy to integrate, read, control, and modify parameters o
 The first indications of the CANopen-like protocol used by the Weishaupt "Systemgerät" (system device) can already be found in the .CSV files on the micro SD card, which is located in the micro SD card slot on the underside of the Weishaupt "Systemgerät" (system device).  
   
 Example content of:  
-`22011701.CSV`:  
+`19121201.CSV`:  
   
 `DP-Nr;DP01;DP02;DP03;DP04;DP05;DP06;DP07;DP08;DP09;DP0a`  
 `MI;02;03;07;07;07;09;07;09;07;02`  
@@ -122,15 +122,15 @@ Example content of:
 `FF;0a;0a;0a;64;0a;0a;0a;01;0a;0a`  
   
 `Date;Value`  
-`17.01.22 11:38:46;0,4;13,4;57,0;98,4;13,0;11,1;10,4;806,0;14,2;;;;;;;;;;;`  
+`12.12.19 11:38:46;0,4;13,4;57,0;98,4;13,0;11,1;10,4;806,0;14,2;;;;;;;;;;;`  
 ...  
-`17.01.22 11:56:46;0,4;29,4;57,0;100,1;49,3;50,1;21,8;802,0;38,8;;;;;;;;;;;`  
+`12.12.19 11:56:46;0,4;29,4;57,0;100,1;49,3;50,1;21,8;802,0;38,8;;;;;;;;;;;`  
 
 Files on the SD card are mapped to:  
 `http://admin:Admin123@wem-sg/sd/`  
   
 Example in this case:  
-`http://admin:Admin123@wem-sg/sd/22011701.CSV`
+`http://admin:Admin123@wem-sg/sd/19121201.CSV`
 
 The filename is composed as follows:  
 ` YY | MM | DD | xx | .CSV ` (xx can be: 01 or 02)
@@ -170,7 +170,7 @@ http://admin:Admin123@wem-sg/script/Form_eth_log.js
 http://admin:Admin123@wem-sg/script/ajax.js  
 http://admin:Admin123@wem-sg/ajax/CanApiJson.json -->JSON content changes every 30 seconds (polling).  
 http://admin:Admin123@wem-sg/sd/systable.csv --> could be figured out with the help of network packet sniffing between "Systemgerät" and "Gateway WEM-Modbus"  
-http://admin:Admin123@wem-sg/sd/22011701.CSV  --> (example gas heating device logging file)
+http://admin:Admin123@wem-sg/sd/19121201.CSV --> (example gas heating device logging file)
 http://admin:Admin123@wem-sg/sd/DLOG_ACT.CSV  
 http://admin:Admin123@wem-sg/sd/FAC_TEST.TXT  --> content: `--SDCARD FACTORY TEST ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789--`
   
