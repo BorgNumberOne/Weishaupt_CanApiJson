@@ -1,7 +1,11 @@
 # Weishaupt WTC - Weishaupt CAPI - Weishaupt CanApiJson - Weishaupt CANAPI - Weishaupt CANopen-like protocol, Weishaupt CAN API - Weishaupt Command API  
 **(e.g.: {"ID":"12345678","SRC":"SYS","CAPI":{"NN":1,"N01":{"VG":"020201258202000101"}}})**  
 
-<img width="30%" height="30%" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/pic/IMG_008.jpg" /> <img width="25%" height="25%" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/pic/IMG_017.jpg" /> <img width="12%" height="12%" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/pic/IMG_015.jpg" />
+<img width="75%" height="75%" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/img/Weishaupt_CanApiJson_CAPI_CAN_API_Node-Red07.png" />  
+
+<img width="20%" height="20%" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/pic/IMG_040.jpg" /> <img width="20%" height="20%" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/pic/IMG_041.jpg" /> <img width="30%" height="30%" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/pic/IMG_042.jpg" />  
+<img width="30%" height="30%" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/pic/IMG_008.jpg" /> <img width="25%" height="25%" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/pic/IMG_017.jpg" /> <img width="12%" height="12%" alt="Image" src="https://raw.githubusercontent.com/BorgNumberOne/Weishaupt_CanApiJson/refs/heads/main/pic/IMG_015.jpg" />  
+ 
 
 
 **!!! Anything you do with your Weishaupt gas boiler or system unit and/or compatible devices in connection with the information published here is at your own risk !!!**  
