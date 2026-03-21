@@ -40,7 +40,7 @@ Using the **Weishaupt WEM portal** and local control at the same time is not pos
 You can either use the **Weishaupt WEM portal** or local control.  
 https://www.wemportal.com/Web/Documents/FAQ/FAQ.de.pdf?lang=de
   
-So, you cannot use both (WEM Portal and local access / local acces through the protocol converters (ModBus TCP /KNX)) at the same time:  
+So, you cannot use both (WEM Portal and local access / local acces through the protocol converters (ModBus TCP / KNX)) at the same time:  
 Search for: `Gateway und WEM-Portal-Nutzung schließen sich gegenseitig aus`  
 (Gateway WEM-Modbus / Gateway WEM-KNX and Weishaupt WEM Portal usage are mutually exclusive.)  
 a)  
@@ -82,8 +82,11 @@ http://admin:Admin123@wem-sg/script/Form_eth_log.js
 **Long:** just keep reading  
   
 Weishaupt CanApiJson - CAN bus-like / CANopen-like protocol via JSON is a communication protocol between:  
-"**Systemgerät**" (48301122172, 48301122242, 48301122512, 48301122522) and other Weishaupt (compatible) devices like a:  
-
+  
+"**Systemgerät**" (48301122172, 48301122242, 48301122512, 48301122522)  
+  
+and other Weishaupt (compatible) devices like a:  
+  
 "**Gateway WEM-Modbus**" data protocol converter ( 48300002722 ) or a:  
 "**Gateway WEM-KNX**" data protocol converter ( 48300002012 ) or a:  
 "**Set Kopierschutzstecker PC-Tool WEM- Diagnose-Dongle mit Kabel für Heizungsb.**" ( 48300000722 )  
