@@ -185,6 +185,13 @@ http://admin:Admin123@wem-sg/sd/systable.csv --> could be figured out with the h
 http://admin:Admin123@wem-sg/sd/19121201.CSV --> (example gas heating device logging file)  
 http://admin:Admin123@wem-sg/sd/DLOG_ACT.CSV  
 http://admin:Admin123@wem-sg/sd/FAC_TEST.TXT  --> content: `--SDCARD FACTORY TEST ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789--`
+http://admin:Admin123@wem-sg/upload.html  
+http://admin:Admin123@wem-sg/css/msdropdown/dd.css  
+http://admin:Admin123@wem-sg/css/msdropdown/flags.css  
+http://admin:Admin123@wem-sg/css/upload.css  
+http://admin:Admin123@wem-sg/script/jquery/jquery-1.9.0.min.js  
+http://admin:Admin123@wem-sg/script/msdropdown/jquery.dd.min.js  
+http://admin:Admin123@wem-sg/script/server.js  
   
 ## Gateway WEM-Modbus (Weishaupt 48300002722)  
 
