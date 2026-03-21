@@ -39,11 +39,13 @@ Home Assistant Integration is available here: https://github.com/kraiz/hassio-we
 Using the **Weishaupt WEM portal** and local control at the same time is not possible.  
 You can either use the **Weishaupt WEM portal** or local control.  
 https://www.wemportal.com/Web/Documents/FAQ/FAQ.de.pdf?lang=de
-
-You cannot use both (WEM Portal and local access) at the same time:  
-Search for: "Gateway und WEM-Portal-Nutzung schließen sich gegenseitig aus"  
-(WEM Gateway and WEM Portal usage are mutually exclusive.)  
+  
+So, you cannot use both (WEM Portal and local access / local acces through the protocol converters (ModBus TCP /KNX)) at the same time:  
+Search for: `Gateway und WEM-Portal-Nutzung schließen sich gegenseitig aus`  
+(Gateway WEM-Modbus / Gateway WEM-KNX and Weishaupt WEM Portal usage are mutually exclusive.)  
 a) https://www.badexo.de/weishaupt-gateway-wem-knx-zur-umsetzung-des-wem-bus-protokolls-auf-knx-standard  
+-->  
+**KNX-Gateway und WEM-Portal-Nutzung schließen sich gegenseitig aus.**
 b) https://web.archive.org/web/20241202114520/https://www.loebbeshop.de/weishaupt/zubehoer/gateway-von-wem-auf-modbus-tcp-48300002722/  
 -->  
 **Einsetzbar für die Brennwertsysteme WTC-G 15 bis 150.  
