@@ -45,12 +45,12 @@ Search for: `Gateway und WEM-Portal-Nutzung schließen sich gegenseitig aus`
 (Gateway WEM-Modbus / Gateway WEM-KNX and Weishaupt WEM Portal usage are mutually exclusive.)  
 a) https://www.badexo.de/weishaupt-gateway-wem-knx-zur-umsetzung-des-wem-bus-protokolls-auf-knx-standard  
 -->  
-**KNX-Gateway und WEM-Portal-Nutzung schließen sich gegenseitig aus.**
+**KNX-Gateway und WEM-Portal-Nutzung schließen sich gegenseitig aus.**  
 b) https://web.archive.org/web/20241202114520/https://www.loebbeshop.de/weishaupt/zubehoer/gateway-von-wem-auf-modbus-tcp-48300002722/  
 -->  
 **Einsetzbar für die Brennwertsysteme WTC-G 15 bis 150.  
 Ausgeführt als Hutschienengerät.  
-Modbus-Gateway und WEM-Portal-Nutzung schließen sich gegenseitig aus.** 
+Modbus-Gateway und WEM-Portal-Nutzung schließen sich gegenseitig aus.**  
   
 Furthermore, control, configure, read, and modify the settings of the "Systemgerät" itself (http://admin:Admin123@wem-sg/) is also handled via the Weishaupt CanApiJson / Weishaupt CAPI in the background via the web interface:  
 Just analyze the content of:  
