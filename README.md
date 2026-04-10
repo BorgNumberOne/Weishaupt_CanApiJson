@@ -448,9 +448,8 @@ In Wireshark I could sniff/dump these Weishaupt CanApiJson frame packets:
 `{"ID":"12345678","SRC":"SYS","CAPI":{"NN":1,"N01":{"VG":"**04**0200256b020002**028F**"}}}`
   
 You can see the payload of: **028F** (→ 65,5 °C = **028F** [HEX]) and you can see the new commands: **03**/**04**  
-**03** seems to be: write request
-**03** seems to be: write response/confirmation  
- 
+**03** seems to be: write request  
+**04** seems to be: write response/confirmation  
 **05** seems to be: error / something went wrong  
 try this:  
 `curl.exe --http1.1 -H "Connection: keep-alive" -H "User-Agent:" -H "Accept:" -H "Referer: http://wem-sg/" -H "Content-Type:" -u admin:Admin123 -d "{\"ID\":\"12345678\",\"SRC\":\"DDC\",\"CAPI\":{\"NN\":1,\"N01\":{\"VG\":\"010200256002000200\"}}}" http://wem-sg/ajax/CanApiJson.json`  
