@@ -181,9 +181,9 @@ DP07 - 0700253302 = same CanApiJson/VG datagram, if **only** the **Modbus regist
 DP08 - 0901261302 - Volumenstrom VPT  
 DP09 - 0700253700 = same CanApiJson/VG datagram, if **only** the **Modbus register: 168** is selected in the Gateway WEM-Modbus web interface  
 DP0a - 0202250700  
-
-
-**The Weishaupt CAPI - CANopen-like protocol / datagram:**
+  
+  
+## The Weishaupt CAPI - CANopen-like protocol / datagram:  
   
 If the JSON function is enabled in the settings of the Weishaupt "Systemgerät" (SG / SG1 - Weishaupt control unit for the gas boiler/heat pump/...) and the Weishaupt "Systemgerät" is connected to the local network via the RJ-45 interface (DHCP server enabled or manually assigned IP address), then this address can be accessed with a browser:  
   
