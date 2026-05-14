@@ -117,7 +117,7 @@ This document contains research results on the structure and functionality of th
 
 This document makes it easy to integrate, read, control, and modify parameters of Weishaupt devices that use this CanApiJson protocol (gas boiler, heat pump, etc.) in DOS, Windows, AmigaOs, OpenWRT, Node-RED, Home Assistant, FHEM, ioBroker, etc.  
   
-**CSV files on the Weishaupt Systemgerät micro SD card**  
+## CSV files on the Weishaupt Systemgerät micro SD card  
   
 The first indications of the CANopen-like protocol used by the Weishaupt "Systemgerät" (system device) can already be found in the .CSV files on the micro SD card, which is located in the micro SD card slot on the underside of the Weishaupt "Systemgerät" (system device).  
   
