@@ -169,6 +169,20 @@ Date | Value
   
 This structure and the data fields/data field labels ( **MI**, **MX**, **OX**, **OS**  ) within the .CSV files are also used in the VG telegrams within the Weishaupt CANopen-like protocol / the CanApiJson protocol.  
 
+Datagrams that could be / could not be identified:  
+(**MI** **MX** **OX** **OS**)  
+0200250300  
+0300252902  
+0700254500 - Vorlaufsolltemperatur  
+0700253400  
+0700253600  
+0901261502  
+0700253302 - It is the same CanApiJson / VG datagram, when you **only** select the **Modbus register: 167** in the Gateway WEM-Modbus web interface  
+0901261302 - Volumenstrom VPT  
+0700253700 - It is the same CanApiJson / VG datagram, when you **only** select the **Modbus register: 168** in the Gateway WEM-Modbus web interface  
+0202250700  
+
+
 **The Weishaupt CAPI - CANopen-like protocol / datagram:**
   
 If the JSON function is enabled in the settings of the Weishaupt "Systemgerät" (SG / SG1 - Weishaupt control unit for the gas boiler/heat pump/...) and the Weishaupt "Systemgerät" is connected to the local network via the RJ-45 interface (DHCP server enabled or manually assigned IP address), then this address can be accessed with a browser:  
