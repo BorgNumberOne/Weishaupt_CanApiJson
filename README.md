@@ -170,17 +170,17 @@ Date | Value
 This structure and the data fields/data field labels ( **MI**, **MX**, **OX**, **OS**  ) within the .CSV files are also used in the VG telegrams within the Weishaupt CANopen-like protocol / the CanApiJson protocol.  
 
 Datagrams that could be / could not be identified:  
-(**MI** **MX** **OX** **OS**)  
-0200250300  
-0300252902  
-0700254500 - Vorlaufsolltemperatur  
-0700253400  
-0700253600  
-0901261502  
-0700253302 - It is the same CanApiJson / VG datagram, when you **only** select the **Modbus register: 167** in the Gateway WEM-Modbus web interface  
-0901261302 - Volumenstrom VPT  
-0700253700 - It is the same CanApiJson / VG datagram, when you **only** select the **Modbus register: 168** in the Gateway WEM-Modbus web interface  
-0202250700  
+(**DP-Nr** - **MI** **MX** **OX** **OS**)  
+DP01 - 0200250300  
+DP02 - 0300252902  
+DP03 - 0700254500 - Vorlaufsolltemperatur  
+DP04 - 0700253400  
+DP05 - 0700253600  
+DP06 - 0901261502  
+DP07 - 0700253302 = same CanApiJson/VG datagram, if **only** the **Modbus register: 167** is selected in the Gateway WEM-Modbus web interface  
+DP08 - 0901261302 - Volumenstrom VPT  
+DP09 - 0700253700 = same CanApiJson/VG datagram, if **only** the **Modbus register: 168** is selected in the Gateway WEM-Modbus web interface  
+DP0a - 0202250700  
 
 
 **The Weishaupt CAPI - CANopen-like protocol / datagram:**
