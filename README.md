@@ -142,13 +142,32 @@ Files on the SD card are mapped to:
 `http://admin:Admin123@wem-sg/sd/`  
   
 Example in this case:  
-`http://admin:Admin123@wem-sg/sd/19121201.CSV`
+`http://admin:Admin123@wem-sg/sd/19121201.CSV`  
 
 The filename is composed as follows:  
 ` YY | MM | DD | xx | .CSV ` (xx can be: 01 or 02)
 
 Inside the example .CSV file there you can already see the data fields used / the identifiers of the data fields: **MI**, **MX**, **OX**, **OS**  
-This structure and the data fields/data field labels within the .CSV files are also used in the VG telegrams within the Weishaupt CANopen-like protocol / the CanApiJson protocol.  
+
+More structured / ordered view of the `19121201.CSV` (`DP-Nr` could be: **d**ata **p**oint **n**umbe**r** / **D**aten**p**unkt-**Nr**.):  
+
+DP-Nr | DP01 | DP02 | DP03 | DP04 | DP05 | DP06 | DP07 | DP08 | DP09 | DP0a
+-- | -- | -- | -- | -- | -- | -- | -- | -- | -- | --
+MI | 02 | 03 | 07 | 07 | 07 | 09 | 07 | 09 | 07 | 02  
+MX | 00 | 00 | 00 | 00 | 00 | 01 | 00 | 01 | 00 | 02  
+OX | 2503 | 2529 | 2545 | 2534 | 2536 | 2615 | 2533 | 2613 | 2537 | 2507  
+OS | 00 | 02 | 00 | 00 | 00 | 02 | 02 | 02 | 00 | 00  
+INT | 0028 | 0028 | 0028 | 0028 | 0028 | 0028 | 0028 | 0028 | 0028 | 0028  
+UNIT | 01 | 01 | 01 | 03 | 01 | 01 | 01 | 06 | 01 | 01  
+FF | 0a | 0a | 0a | 64 | 0a | 0a | 0a | 01 | 0a | 0a  
+ . | .
+Date | Value  
+12.12.19 11:38:46 | 0,4 | 13,4 | 57,0 | 98,4 | 13,0 | 11,1 | 10,4 | 806,0 | 14,2 |  
+...  
+12.12.19 11:56:46 | 0,4 | 29,4 | 57,0 | 100,1 | 49,3 | 50,1 | 21,8 | 802,0 | 38,8 |  
+  
+  
+This structure and the data fields/data field labels ( **MI**, **MX**, **OX**, **OS**  ) within the .CSV files are also used in the VG telegrams within the Weishaupt CANopen-like protocol / the CanApiJson protocol.  
 
 **The Weishaupt CAPI - CANopen-like protocol / datagram:**
   
