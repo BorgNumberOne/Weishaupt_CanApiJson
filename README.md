@@ -33,7 +33,10 @@ and:
   
 *Update:*  
 Node-RED example is here: https://github.com/BorgNumberOne/Weishaupt_CanApiJson/issues/3  
-Home Assistant Integration is available here: https://github.com/kraiz/hassio-weishaupt  
+Projects resulting from the [CanApiJson research findings](https://github.com/BorgNumberOne/Weishaupt_CanApiJson):  
+Home Assistant Integration is available here:  
+https://github.com/kraiz/hassio-weishaupt  
+https://github.com/JS-DE-Tech/hacs-weishaupt-lan  
 
 **Important:**  
 Using the **Weishaupt WEM portal** and local control at the same time is not possible.  
