@@ -428,6 +428,14 @@ https://web.archive.org/web/20250428194946/https://www.haustechnik-handrich.de/w
 https://www.diybuildsupplies.com/product/gateway-wem-modbus-48300002722-von-weishaupt/  
 https://www.armaturenheiztechnik.com/product/gateway-wem-modbus-48300002722-von-weishaupt/  )
 
+
+### Additional hardware-validated HK1 setting addresses
+
+Read-only measurements on a WTC-GW 15-B identified ten further HK1 settings,
+including a `GET VS=1` / `response VS=2` size quirk for three temperature
+registers. See [validated HK1 register table and request/response telegrams](docs/hk1-additional-validated-registers.md). These observations are
+specific to the tested controller and do not validate write access.
+
 ## Mapping table (some kind of a):  
 
 ---new---  
