@@ -428,6 +428,24 @@ https://web.archive.org/web/20250428194946/https://www.haustechnik-handrich.de/w
 https://www.diybuildsupplies.com/product/gateway-wem-modbus-48300002722-von-weishaupt/  
 https://www.armaturenheiztechnik.com/product/gateway-wem-modbus-48300002722-von-weishaupt/  )
 
+<!-- HK1-HEATING-CURVE-START -->
+## Additional validated HK1 heating curve registers
+
+Two CanApiJson registers were identified and validated on a
+Weishaupt WTC-GW 15-B installation:
+
+| Parameter | OX | Scale | Unit |
+|---|---|---|---|
+| Heating curve slope (Heizkurvensteilheit HK1) | `0x254B` | 0.1 | — |
+| Heating curve parallel shift (Parallelverschiebung HK1) | `0x25AD` | 0.1 | K |
+
+Both registers were verified using read-only CanApiJson requests
+and comparisons with the physical heating controller.
+
+**[Technical documentation, example telegrams and hardware validation](docs/hk1-heating-curve-registers.md)**
+
+<!-- HK1-HEATING-CURVE-END -->
+
 ## Mapping table (some kind of a):  
 
 ---new---  
